@@ -1,79 +1,89 @@
-bot_token: ADAADADADA
-bot_name: RWRCON #имя бота в кмд о боте и где то ещё зависить от вас :)
-bot_id: 123213
-db_username: lsee
-db_database: bse
-db_password: root
-db_server: localhost #host
-db_port: 3306
-db_storage: ./database.sqlite #для SQLite
-db_dialect: sqlite # mysql или sqlite в нижнем регистре
-install: false #поставить на false если нужно сбросить базу данных
-#Специальный токен с уровнем доступа app_widget
-#для получение токена использовать приложение "https://vk.com/app8199387"
-widgets_token: widgets token
-up_server_info: 1800 # каждые 5 секунд будет обновление информации о сервере
-console_log: true # true - включить вывод логов в консоль false - отключить
-vk_log: false # true - включить вывод логов в вк беседу false - отключить
-file_log: true # true - включить вывод логов в файлы false - отключить
-widgets_on: false # true - включить виджет в группе нужен спец. токен
-block_cmd: 1 #1- можно все кроме заблокированых 2 - можно использовать ток расрешенные кмд
-logchat: 1 #айди беседы куда будет отправлены логи о том что пользаватель отправил такую кмд на сервер
-system_chat: 1 #айди беседы куда будут идти логи об ошибке при подключении или отправке команд на сервер
-modchat: 1 #айди беседы куда будут идти репорты
+bot:
+  group_id: 185112414
+  name: RimWorld
+  group_token: токен группы
+  #Специальный токен с уровнем доступа app_widget
+  #для получение токена использовать приложение https://vk.com/app8199387
+  #так же это приложение должно быть в сообществе для работы
+  widgets_token: виджет токен
+  widgets_on: false  # true - включить виджет в группе нужен спец. токен
+  #удалить при запуске бота и все так же если хотите убрать отключите виджет
+  widgets_delete: false # true - удалить виджет в группе нужен виджет токен
+db:
+  username: username
+  database: database
+  password: password
+  server: localhost
+  port: 3306
+  storage: ./database.sqlite #для SQLite
+  dialect: sqlite # mysql или sqlite в нижнем регистре
+  install: false #поставить на false если нужно сбросить базу данных (и предется занова install прописать)
 
-#установка сами :)
+#DEV LOG не касается этих настроек она всегда включен
+logger:
+  # true - включить false - отключить
+  #вывод логов в вк беседу
+  vk: false
+  #вывод логов в файлы
+  file: true
+  #вывод логов в консоль
+  console: true
+  #айди беседы куда будет отправлены логи о том что пользаватель отправил кмд на сервер
+  logchat: 1
+  #айди беседы куда будут идти логи об ошибке при подключении или отправке команд на сервер
+  system_chat: 1
+  #айди беседы куда будут идти репорты
+  modchat: 1
+# каждые 10 секунд будет обновление информации о сервере
+# лучше ставить не меньше 10 так как могут быть ошибки из а частого пинга а лучше 30-60
+monitor:
+  ping: 
+    url: https://api.rimworlda.ru/status/ping.php?ip=%ip%:%port%
+    #название строк где выводится инфа о количестве игроков на сервере
+    #если строка в массиве то ставить типо так players.now players.max как пример это
+    players: players
+    max_players: max_players
+  query: 
+    url: https://api.rimworlda.ru/status/query.php?ip=%ip%:%port%
+    players: players
+    max_players: max_players
+  time: 10
+#1- можно все кроме заблокированых 
+#2 - можно использовать ток разрешенные кмд
+block_cmd: 1
+#крон задачи (авто. отправка команды на нужный вам сервер)
+cron:
+  - type: rcon # первая цель - RCON
+    enable: false #включить или отключить задачу (нужен будет перезапуск бота)
+    host: '127.0.0.1' # адрес сервера RCON
+    port: 25575 # порт сервера RCON
+    password: 'password' # пароль сервера RCON
+    time: "*/5 * * * * *" # время выполнения задачи в формате cron (см. https://crontab.guru/)
+    timezone: "Europe/Moscow" # Часовой пояс по которому будет работать time
+    command: ban __Lucifer__ :)
+  - type: server # вторая цель - server
+    enable: false
+    name: surv #айди имя сервера в таблице RWRcon_Data
+    time: "*/5 * * * * *" #каждые 5 минут :)
+    timezone: "Europe/Moscow"
+    command:  # выполнить команды по очереди :)
+      - ban __Lucifer__ :)
+      - unban __Lucifer__ :)
 #============================================================#
 # +--------------------------------------------------------+ #
 # |                уровни доступа команде                  | #
 # |                к примеру /surv:list                    | #
 # |                у send_rcon_max могут                   | #
-# |                использовать ток 5 лвл и выше           | #
+# |                использовать ток 4 лвл и выше           | #
 # |                у max нету блокировки команд            | #
 # |                send_rcon_min есть блокировка           | #
 # |                команд так же ее могут                  | #
 # |                использовать 1 и выше                   | #
 # |                но не выше send_rcon_max                | #
-# |                                                        | #
 # +--------------------------------------------------------+ #
 #============================================================#
 send_rcon_min: 1
-send_rcon_max: 5
-#============================================================#
-# +--------------------------------------------------------+ #
-# |                уровни доступа команд                   | #
-# |             Цифры уровни доступа для них               | #
-# |             к примеру если 3 стоит значит              | #
-# |        команду могут использовать ток 3 лвл и выше     | #
-# | ровно 0 или ниже 0 не ставить сработает авто откл бота | #
-# +--------------------------------------------------------+ #
-#============================================================#
-
-addserver: 5 
-addblock: 4
-ban: 2
-rconaddcmd: 4
-createacc: 5
-deleteacc: 5
-delserver: 5
-down: 4
-give: 3
-otvet: 2
-cmdmode: 5
-reload: 4
-reports: 2
-server: 3
-system: 1
-removeblock: 4
-unban: 2
-rconremovecmd: 4
-ungive: 3
-up: 3
-addlevel: 5
-rconlog: 5
-rconstatus: 1
-rconupload: 4
-blallow: 5
+send_rcon_max: 4
 #============================================================#
 # +--------------------------------------------------------+ #
 # |              если у max_up стоит                       | #
@@ -85,45 +95,164 @@ blallow: 5
 #============================================================#
 max_up: 5
 min_down: 1
-#название команд должно быть в массиве иначе ошибка :)
-#просто можешь забыть так такого пока нету и не работает работаю над этим
-namecommand:
-- addlevel: ["rcon addlevel"]
-- addserver: ["rcon addserver"]
-- allow: ["rcon addblock"]
-- auth: ["auth"]
-- ban: ["ban"]
-- banlist: ["банлист"]
-- block: ["rcon addcmd"]
-- createacc: ["rcon addmember"]
-- deleteacc: ["rcon removemember"]
-- delserver: ["rcon removeserver"]
-- down: ["down"]
-- geoip: ["geoip"]
-- give: ["give"]
-- help: ["help"]
-- obote: ["о боте"]
-- online: ["онлайн"]
-- otvet: ["ответ"]
-- ping: ["ping"]
-- profils: ["Профиль"]
-- rconcmdmode: ["rcon setmode"]
-- rcon: ["rcon log"]
-- rconblallow: ["rcon blallow"]
-- rconempty: ["rcon"]
-- rconstatus: ["rcon status"]
-- rconupload: ["rcon upload"]
-- reload: ["reload"]
-- report: ["report"]
-- reports: ["репорты"]
-- server: ["rcon usercone"]
-- system: ["system"]
-- unallow: ["rcon removebloc"]
-- unban: ["unban"]
-- unblock: ["rcon removecmd"]
-- ungive: ["ungive"]
-- up: ["up"]
-- urlping: ["url-ping"]
+#айди чисто для того чтобы легко определить настройку для нее на тот случий если подрядок другой
+#за название не бейте :)
+#aliases это сама команда ну и алиасы вместе
+#============================================================#
+# +--------------------------------------------------------+ #
+# |                уровни доступа команд                   | #
+# |             Цифры уровни доступа для них               | #
+# |             к примеру если 3 стоит значит              | #
+# |        команду могут использовать ток 3 лвл и выше     | #
+# +--------------------------------------------------------+ #
+#============================================================#
+commands:
+  - id: addlevel
+    level: 5
+    aliases:
+      - rcon addlevel
+  - id: addserver
+    level: 5
+    aliases:
+      - rcon addserver
+  - id: addblack
+    level: 4
+    aliases:
+      - rcon addblack
+  - id: auth
+    level: 5
+    aliases:
+      - auth
+  - id: ban
+    level: 2
+    aliases:
+      - ban
+  - id: banlist
+    aliases:
+      - банлист
+  - id: addcmd
+    level: 4
+    aliases:
+      - rcon addcmd
+  - id: addmember
+    level: 5
+    aliases:
+      - rcon addmember
+  - id: removemember
+    level: 5
+    aliases:
+      - rcon removemember
+  - id: removeserver
+    level: 5
+    aliases:
+      - rcon removeserver
+  - id: down
+    level: 4
+    aliases:
+      - down
+  - id: geoip
+    aliases:
+      - geoip
+  - id: give
+    level: 3
+    aliases:
+      - give
+  - id: help
+    aliases:
+      - помощь
+  - id: install
+    aliases:
+      - install
+  - id: obote
+    aliases:
+      - о боте
+  - id: online
+    aliases:
+      - онлайн
+  - id: otvet
+    level: 2
+    aliases:
+      - ответ
+  - id: ping
+    aliases:
+      - ping
+  - id: profils
+    aliases:
+      - профиль
+  - id: setmode
+    level: 5
+    aliases:
+      - rcon setmode
+  - id: log
+    level: 5
+    aliases:
+      - rcon log
+  - id: blallow
+    level: 5
+    aliases:
+      - rcon blallow
+  - id: rcon
+    level: 1
+    aliases:
+      - rcon
+  - id: status
+    level: 1
+    aliases:
+      - rcon status
+  - id: upload
+    level: 4
+    aliases:
+      - rcon upload
+  - id: reload
+    level: 4
+    aliases:
+      - reload
+  - id: report
+    aliases:
+      - report
+  - id: reports
+    level: 2
+    aliases:
+      - репорты
+  - id: rconsendcmd
+    level: 5
+    aliases:
+      - \/
+  - id: usercone
+    level: 3
+    aliases:
+      - rcon usercone
+  - id: system
+    level: 1
+    aliases:
+      - system
+  - id: removeblack
+    level: 4
+    aliases:
+      - rcon removeblack
+  - id: unban
+    level: 2
+    aliases:
+      - unban
+  - id: removeblock
+    level: 4
+    aliases:
+      - rcon removeblock
+  - id: ungive
+    level: 3
+    aliases:
+      - ungive
+  - id: up
+    level: 3
+    aliases:
+      - up
+  - id: urlping
+    aliases:
+      - url-ping
+  - id: rename
+    level: 4
+    aliases:
+      - rcon rename
 #Не большой ведь так?:)
 #.....'''''''''',,,,,,,,,,'''''',,,,,,''''''''''''''''''''''''''''''''''''''....''''''''''''''''''''''''''''''''''''''''',;;;,,''''''''''''''''''''''''''''''''''''''''''''''''',,'''''''''''''''''''''',,,,''''''''.....'.........''''''''''''''',,,'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''',,,,'''...'''''...'''''''''''....''''...'''''''''''''''''''''''''''''.............',
 #.......'''''''',,,,,,,,,''''''''''',,'''''''''''''''''''''''''''''''''''''.....'''''''''''''''''''''''''''''''''''''',,,,,'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''......'''''''''''''',,''''''''.....'''.......'''''''''''''''',,''''''''......'''''''''''''''''''''''''''''''''''''''''''''''''''''''''',,,''''....'''....''''''''''.....'''....''''''''''''''''''''''''''''...............,
