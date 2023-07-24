@@ -16,7 +16,7 @@ db:
   server: localhost
   port: 3306
   storage: ./database.sqlite #для SQLite
-  dialect: sqlite # mysql или sqlite в нижнем регистре
+  dialect: sqlite # mysql или sqlite или mariadb в нижнем регистре
   install: false #поставить на false если нужно сбросить базу данных (и предется занова install прописать)
 
 #DEV LOG не касается этих настроек она всегда включен
