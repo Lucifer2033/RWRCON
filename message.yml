@@ -8,7 +8,7 @@
 # | %vkuser.text%                              | #
 # | %vkuser.first_name%                        | #
 # | %vkuser.last_name%                         | #
-# | %vkuser.senderid%                          | #
+# | %vkuser.senderId%                          | #
 # +--------------------------------------------+ #
 # | %uptime.sec%                               | #
 # | %uptime.min%                               | #
@@ -397,7 +397,7 @@ addmember:
   sms_add_access:
     options:
       message: "[%config.bot.name%]\n %userlevel.name% *id%user.vkid% (%user.pref%)\nВыдал вам доступ к боту с уровнем %targetlevel.name%"
-      user_id: "%targetuser.id%"
+      user_id: "%targetuser.vkid%"
       random_id: 0
   add_access:
     options:
@@ -612,7 +612,6 @@ help:
       - "%profil.servers%\n"
       - "Информация:\n"
       - "🔻 rcon — Настройка ркона.\n"
-      - "🔻 server [server] — выкл/вкл доступ сервер.\n"
       - "🔻 ungive [server] [vkid/ссылка] — забрать доступ к серверу.\n"
       - "🔻 system — Системная информация бота.\n"
       - "🔻 report [text] — написать админам об ошибке.\n"
@@ -634,7 +633,6 @@ help:
       - "%profil.servers%\n"
       - "Информация:\n"
       - "🔻 rcon — Настройка ркона.\n"
-      - "🔻 server [server] — выкл/вкл доступ сервер.\n"
       - "🔻 ungive [server] [vkid/ссылка] — забрать доступ к серверу.\n"
       - "🔻 give [server] [vkid/ссылка] — выдать доступ к серверу.\n"
       - "🔻 system — Системная информация бота.\n"
@@ -1140,9 +1138,9 @@ otvet:
       message: "⚠ Данный пользователь не найден. ⚠"
   otvet_send:
     options:
-      message: "🔔 *id%targetuser.vkid% (%targetuser.pref%), на ваше сообщение №%report.id% поступил ответ:\n💬 %args[2]%"
+      message: "🔔 *id%targetuser.vkid% (%targetuser.pref%), на ваше сообщение №%report.id% поступил ответ:💬 %args[2]%"
       user_id: "%targetuser.vkid%"
-      random_id: 0
+      random_id: "0"
   otvet_result:
     options:
       message: "%user.pref%, ответ доставлен. 👍"
@@ -1355,7 +1353,7 @@ install:
         message: "⚠ Ошибка: Вы не ввели ник. ⚠"
   main:
     options:
-      message: "*id%vkuser.senderid% (Install Successfully)"
+      message: "*id%vkuser.senderId% (Install Successfully)"
 #============================================================#
 # +--------------------------------------------------------+ #
 # |            Сообщение в команде ping                    | #
