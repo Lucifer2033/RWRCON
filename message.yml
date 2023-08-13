@@ -150,7 +150,9 @@ ban:
       message: "⚠ Данный пользователь не найден. ⚠"
   banned_message:
     options:
-      message: "[%config.bot.name%] %user.level% *id%user.vkid% (%user.pref%)\nВыдал(а) вам блокировку в боте\nПричина блокировки: %args[2]%"
+      message: "[%config.bot.name%] %userlevel.level% *id%user.vkid% (%user.pref%)\nВыдал(а) вам блокировку в боте\nПричина блокировки: %args[2]%"
+      user_id: "%targetuser.vkid%"
+      random_id: 0
   banned:
     options:
       message: 'Вы заблокировали пользавателю доступ к боту *id%targetuser.vkid% (%targetuser.pref%)'
@@ -1177,6 +1179,8 @@ unban:
   unban_message:
     options:
       message: "[%config.bot.name%] %userlevel.name% *id%user.vkid% (%user.pref%)\nСнял(а) блокировку к доступу боту"
+      user_id: "%targetuser.vkid%"
+      random_id: 0
   unban:
     options:
       message: "Вы разблокировали  доступ к боту *id%targetuser.vkid% (%targetuser.pref%)"
