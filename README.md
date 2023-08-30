@@ -10,4 +10,4 @@
 ● Свой мониторинг ваших серверов в группе<p>
 ● cron для авто. отправки команд на сервер<p>
 ● Возможность импортировать команды в бд через файл<p>
-whitelist.yml, blacklist.yml, blocklist.yml<p>
+whitelist.yml, blacklist.yml, blocklist.yml, symbollist.yml<p>
