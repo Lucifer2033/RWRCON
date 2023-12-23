@@ -954,7 +954,7 @@ report:
   report_send:
     options:
       message: "%report.title%\n🗣️ Отправил: %user.vkid%\n✏️ ID жалобы: %report.id%\n➡️ %user.pref%: %report.messages%"
-      chat_id: "%config.logger.modchat%"
+      chat_id: "%config.logger.vk.chat.mod%"
       random_id: 0
   report_result:
     options:
@@ -1085,12 +1085,12 @@ server_rcon:
           - "LvL: %userlevel.name%\n"
           - "использовал команду %args[2]%\n"
           - "через бота!\n"
-          chat_id: "%config.logger.logchat%" #можно цифрвой айди если не из кфг брать хотите или свой параметр)
+          chat_id: "%config.logger.vk.chat.log%" #можно цифрвой айди если не из кфг брать хотите или свой параметр)
           random_id: 0
       error:
         options:
           message:  "%prefix.prefix% Ошибка при подключении к серверу %server.error%"
-          chat_id: "%config.logger.system_chat%"
+          chat_id: "%config.logger.vk.chat.system%"
           random_id: 0
     file:
       result: |
@@ -1849,14 +1849,14 @@ unlink:
       message: "Вы успешно отвязали аккаунт"
 #================================================#
 # +--------------------------------------------+ #
-# |      Сообщение в команде rcon symbol       | #
+# |      Сообщение в команде rcon addsymbol    | #
 # |             placeholders                   | #
 # +--------------------------------------------+ #
 # | доступные в этой команде                   | #
 # +--------------------------------------------+ #
-# | %symbollist.id%                             | #
-# | %symbollist.symbol%                         | #
-# | %symbollist.server%                         | #
+# | %symbollist.id%                            | #
+# | %symbollist.symbol%                        | #
+# | %symbollist.server%                        | #
 # +--------------------------------------------+ #
 # | %prefix.id%                                | #
 # | %prefix.name%                              | #
@@ -1887,9 +1887,9 @@ addsymbol:
 # +--------------------------------------------+ #
 # | доступные в этой команде                   | #
 # +--------------------------------------------+ #
-# | %symbollist.id%                             | #
-# | %symbollist.symbol%                         | #
-# | %symbollist.server%                         | #
+# | %symbollist.id%                            | #
+# | %symbollist.symbol%                        | #
+# | %symbollist.server%                        | #
 # +--------------------------------------------+ #
 # | %prefix.id%                                | #
 # | %prefix.name%                              | #
