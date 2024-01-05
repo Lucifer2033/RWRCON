@@ -11,3 +11,5 @@
 ● cron для авто. отправки команд на сервер<p>
 ● Возможность импортировать команды в бд через файл<p>
 whitelist.yml, blacklist.yml, blocklist.yml, symbollist.yml<p>
+Докуменитация: https://docs.rimworlda.ru/RWRCON
+Для Windows отпишите в группу или мне в лс vk.com/lucifer2033
