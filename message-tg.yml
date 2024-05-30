@@ -1507,6 +1507,10 @@ obote:
     - "★ Время работы: Дн: %uptime.days% || Ч: %uptime.hours% || Мин: %uptime.min% || Сек: %uptime.sec%\n"
     - "★ Дата: %time.two%"
     chat_id: "%tguser.chat.id%"
+    reply_markup:
+      inline_keyboard:
+        - - text: 'профиль'
+            callback_data: 'профиль'
 #================================================#
 # +--------------------------------------------+ #
 # |         Сообщение в команде rcon addlevel  | #
@@ -1625,12 +1629,12 @@ ping:
   result:
     options:
       text:
-      - "🌐 IP-Адрес сервера: %ping.address%\n"
+      - "🌐 IP-Адрес сервера: %ping.ip_address%\n"
       - "🌐 Port сервера: %ping.port%\n"
-      - "💫 онлайн: %ping.players%/%ping.max_players%\n"
-      - "💻 Версия: %ping.version%\n"
-      - "💻 протокол: %ping.protocol%\n"
-      - "📖 Motd: %ping.motd%"
+      - "💫 онлайн: %ping.players.online%/%ping.players.max%\n"
+      - "💻 Версия: %ping.version.name_raw%\n"
+      - "💻 протокол: %ping.version.protocol%\n"
+      - "📖 Motd: %ping.motd.raw%"
       chat_id: "%tguser.chat.id%"
 #================================================#
 # +--------------------------------------------+ #
