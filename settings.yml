@@ -8,7 +8,8 @@ bot:
   #если есть напишет в консоль
   checkupdate: true
   vk:
-    token: группа токен или юзера
+    group_id: 185112414
+    group_token: группа токен
     #Специальный токен с уровнем доступа app_widget
     #для получение токена использовать приложение https://vk.com/app8199387
     #так же это приложение должно быть в сообществе для нормальной работы
@@ -20,15 +21,6 @@ bot:
   tg:
     status: false # true - включить, false - отключить бота тг
     token: телеграмм токен
-anticaptcha: #выбор системы для решения капч от вк можно выбрать лишь один способ (для вк юзера) https://truecaptcha.org/
-  truecaptcha:
-    status: true #включить или откл авто решение капч
-    userid: 'userid'
-    apikey: 'apikey'
-    mode: 'human'
-    case: 'lower'
-    numeric: false
-    magic: true
 db:
   username: username #имя пользователя бд
   database: database #имя бд
@@ -99,12 +91,12 @@ monitor:
     url: https://api.rimworlda.ru/status?ip=%ip%:%port%
     #название строк где выводится инфа о количестве игроков на сервере
     #если строка в массиве то ставить типо так players.now players.max как пример это
-    players: players.players.online
-    max_players: players.players.max
+    players: players.online
+    max_players: players.max
   query:
     url: https://api.rimworlda.ru/status?ip=%ip%:%port%
-    players: players.players.online
-    max_players: players.players.max
+    players: players.online
+    max_players: players.max
   # каждые 10 секунд будет обновление информации о сервере
   # лучше ставить не меньше 10 так как могут быть ошибки из а частого пинга а лучше 30-60
   time: 30
@@ -137,13 +129,8 @@ cron:
     time: "*/15 * * * * *"
     # выполнить команды по очереди :)
     command:
-<<<<<<< Updated upstream
       - ban __Lucifer__ :)
       - unban __Lucifer__ :)
-=======
-      - 'ban __Lucifer__ :)'
-      - 'unban __Lucifer__'
->>>>>>> Stashed changes
 #============================================================#
 # +--------------------------------------------------------+ #
 # |                уровни доступа команде                  | #

@@ -16,7 +16,7 @@
 # | %uptime.days%                              | #
 # +--------------------------------------------+ #
 # | %bot.versions%                             | #
-# | %bot.author%                                | #
+# | %bot.coder%                                | #
 # +--------------------------------------------+ #
 # | %time.one%                                 | #
 # | %time.two%                                 | #
@@ -743,7 +743,7 @@ profils:
       #до 10 фотографиий можно в репорт и ответ на репорт что довольно поможет вам хз:)
       #НО ПОМНИ ЧТО ОНИ ДОЛЖНЫ БЫТЬ ОДНОГО формата тип png,jpg и тд иначе он выведет 1 либо больше хз
       #как это работает у вк не на моей стороне это просто placeholders нечего больше :)
-      #attachment: '%vkuser.attachment%'
+      #attachment: photo%vkuser.attachments.0.ownerId%_%vkuser.attachments.0.id%_%vkuser.attachments.0.accessKey%,photo%vkuser.attachments.1.ownerId%_%vkuser.attachments.1.id%_%vkuser.attachments.1.accessKey%,photo%vkuser.attachments.2.ownerId%_%vkuser.attachments.2.id%_%vkuser.attachments.2.accessKey%,photo%vkuser.attachments.3.ownerId%_%vkuser.attachments.3.id%_%vkuser.attachments.3.accessKey%,photo%vkuser.attachments.4.ownerId%_%vkuser.attachments.4.id%_%vkuser.attachments.4.accessKey%,photo%vkuser.attachments.5.ownerId%_%vkuser.attachments.5.id%_%vkuser.attachments.5.accessKey%,photo%vkuser.attachments.6.ownerId%_%vkuser.attachments.6.id%_%vkuser.attachments.6.accessKey%,photo%vkuser.attachments.7.ownerId%_%vkuser.attachments.7.id%_%vkuser.attachments.7.accessKey%,photo%vkuser.attachments.8.ownerId%_%vkuser.attachments.8.id%_%vkuser.attachments.8.accessKey%,photo%vkuser.attachments.9.ownerId%_%vkuser.attachments.9.id%_%vkuser.attachments.9.accessKey%
 #============================================================#
 # +--------------------------------------------------------+ #
 # |            Сообщение в команде rcon                    | #
@@ -1344,7 +1344,7 @@ up:
 obote:
   options:
     message:
-    - "★ Разроботчик/Автор: %bot.author.url%\n"
+    - "★ Разроботчик/Автор: %bot.coder%\n"
     - "★ Название бота: %config.bot.name%\n"
     - "★ Версия: %bot.versions%\n"
     - "★ Время работы: Дн: %uptime.days% || Ч: %uptime.hours% || Мин: %uptime.min% || Сек: %uptime.sec%\n"
@@ -1451,12 +1451,12 @@ ping:
   result:
     options:
       message:
-      - "🌐 IP-Адрес сервера: %ping.hostIP%\n"
-      - "🌐 Port сервера: %ping.hostPort%\n"
-      - "💫 онлайн: %ping.players.online%/%ping.players.max%\n"
-      - "💻 Версия: %ping.version.name%\n"
-      - "💻 протокол: %ping.version.protocol%\n"
-      - "📖 Motd: %ping.motd.clean%"
+      - "🌐 IP-Адрес сервера: %ping.address%\n"
+      - "🌐 Port сервера: %ping.port%\n"
+      - "💫 онлайн: %ping.players%/%ping.max_players%\n"
+      - "💻 Версия: %ping.version%\n"
+      - "💻 протокол: %ping.protocol%\n"
+      - "📖 Motd: %ping.motd%"
 #================================================#
 # +--------------------------------------------+ #
 # |            Сообщение в команде geoip       | #
