@@ -16,7 +16,7 @@
 # | %uptime.days%                              | #
 # +--------------------------------------------+ #
 # | %bot.versions%                             | #
-# | %bot.coder%                                | #
+# | %bot.author%                                | #
 # +--------------------------------------------+ #
 # | %time.one%                                 | #
 # | %time.two%                                 | #
@@ -1501,12 +1501,16 @@ up:
 obote:
   options:
     text:
-    - "★ Разроботчик/Автор: %bot.coder%\n"
+    - "★ Разроботчик/Автор: %bot.author.url%\n"
     - "★ Название бота: %config.bot.name%\n"
     - "★ Версия: %bot.versions%\n"
     - "★ Время работы: Дн: %uptime.days% || Ч: %uptime.hours% || Мин: %uptime.min% || Сек: %uptime.sec%\n"
     - "★ Дата: %time.two%"
     chat_id: "%tguser.chat.id%"
+    reply_markup:
+      inline_keyboard:
+        - - text: 'профиль'
+            callback_data: 'профиль'
 #================================================#
 # +--------------------------------------------+ #
 # |         Сообщение в команде rcon addlevel  | #
@@ -1625,12 +1629,12 @@ ping:
   result:
     options:
       text:
-      - "🌐 IP-Адрес сервера: %ping.address%\n"
-      - "🌐 Port сервера: %ping.port%\n"
-      - "💫 онлайн: %ping.players%/%ping.max_players%\n"
-      - "💻 Версия: %ping.version%\n"
-      - "💻 протокол: %ping.protocol%\n"
-      - "📖 Motd: %ping.motd%"
+      - "🌐 IP-Адрес сервера: %ping.hostIP%\n"
+      - "🌐 Port сервера: %ping.hostPort%\n"
+      - "💫 онлайн: %ping.players.online%/%ping.players.max%\n"
+      - "💻 Версия: %ping.version.name%\n"
+      - "💻 протокол: %ping.version.protocol%\n"
+      - "📖 Motd: %ping.motd.clean%"
       chat_id: "%tguser.chat.id%"
 #================================================#
 # +--------------------------------------------+ #
