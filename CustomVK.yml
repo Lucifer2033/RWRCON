@@ -1,0 +1,142 @@
+#любые execute можно убрать по жиланию так же и if оставь лишь answer хотя и его можно убрать 
+  0: #первая команда хоть и думаю не можно было по другому но не суть :)
+    regex: /^(?:getvkid)\s?([а-яА-ЯёЁA-Za-z0-9]+)?/i #регулярное выражение для команды
+    enable: true #включить или отключить команду
+    execute: # выполнить (доступные типы sql/vkapi/console/functions)
+      0: #первая
+        type: 'sql' #тип sql значить выполнить sql
+        exec: "SELECT * FROM `RWRcon_User` WHERE `vkid` = %vkuser.senderId%;" #выполнить sql
+        placeholder: 'User' #указать какой для него будет плейсхолдер (все плейсхолдеры которые были созданны хранятся до тех пор пока команда не закончится или ошибка)
+    if: #проверка (можно убрать if по жиланию Так же есть параметр else)
+      0: # первая проверка
+        params: "!args[1]" # если не задан второй аргумент в данном случае это \s?([а-яА-ЯёЁA-Za-z0-9]+)?
+        #сюда так же можно добавить execute
+        return: # вернут тут так же можно сделать If проверку если необходимо
+            type: 'vkapi' #если vkapi то что надо по вк сделать если none то нечего не вернет 
+            exec: 'messages.send' #какой за метод vkapi
+            params: #параметры для vkapi в данном случае для метода messages.send
+              message: "Параметра args[1] не найден" #сообщение
+              peer_id: '%vkuser.senderId%' #кому одать сообщение
+              random_id: 0 #необходимо указать айди ставьте 0 лучше
+      1: # вторая проверка
+        params: "!Placeholders['User']" # если нет плейсхолдера который мы создали при отправке команды
+        return: # вернут тут так же можно сделать If проверку если необходимо
+          type: 'vkapi' #если vkapi то что надо по вк сделать если none то нечего не вернет
+          exec: 'messages.send' #какой за метод vkapi
+          params: #параметры для vkapi в данном случае для метода messages.send
+            message: "⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!" #сообщение
+            peer_id: '%vkuser.senderId%' #кому одать сообщение
+            random_id: 0 #необходимо указать айди ставьте 0 лучше
+    answer: #после всех проверок ответ от команды
+        execute: #так же выполнить (можно убрать execute по жиланию)
+          0: #первая
+            type: "functions" #тип functions значить выполнить functions
+            exec: "vkconvert" #выполнить functions (пока что есть vkconvert/tgconvert)
+            params: "%args[1]%" #параметры для функции
+            placeholder: 'VKInfo' #указать какой для него будет плейсхолдер (все плейсы чтобы пишем мелкими но в placeholder регистер не важен)
+          1: #вторая
+            type: "console" #тип console значить выполнить console
+            exec: "info" #выполнить console.info (доступные info/fatal/debug/trace/warn/error/log)
+            params: "Hi %vkuser.first_name% %vkuser.last_name%" #параметры для функции
+        return: #доступные типы жеvkapi/none
+            type: 'vkapi' #если vkapi то что надо по вк сделать если none то нечего не вернет 
+            exec: 'messages.send' #какой за метод vkapi
+            params: #параметры для vkapi в данном случае для метода messages.send
+              message: "vkid = %vkinfo.id%" #сообщение
+              peer_id: '%vkuser.senderId%'  #кому одать сообщение
+              random_id: 0 #необходимо указать айди ставьте 0 лучше
+  1: #!survival: list как пример
+    regex: /^(?:!([^]+)):\s?([^]+)?/i
+    enable: true
+    execute:
+      0: 
+        type: 'sql'
+        exec: "SELECT * FROM `RWRcon_User` WHERE `vkid` = %vkuser.senderId%;"
+        placeholder: 'User'
+    if:
+      0:
+        params: "!Placeholders['User']"
+        return: 
+          type: 'vkapi' 
+          exec: 'messages.send' 
+          params:
+            message: "⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!"
+            peer_id: '%vkuser.senderId%'
+            random_id: 0
+      1: 
+        params: "%user.level% < %config.send_rcon_min%"
+        return:
+          type: 'vkapi'
+          exec: 'messages.send'
+          params:
+            message: "Ваш уровень слишком низкий для того чтобы использовать данную команду"
+            peer_id: '%vkuser.senderId%'
+            random_id: 0
+      2:
+        params: "!args[1]"
+        else:
+          0:
+            params: "args[1]"
+            execute:
+              0:
+                type: 'sql'
+                exec: "SELECT * FROM `RWRcon_Data` WHERE `name` = '%args[1]%';"
+                placeholder: 'Rcon'
+            return:
+              type: 'none'
+              if:
+                0: 
+                  params: "Placeholders['Rcon'] == null"
+                  return:
+                    type: 'vkapi'
+                    exec: 'messages.send'
+                    params:
+                      message: "Данный сервер не найден"
+                      peer_id: '%vkuser.senderId%'
+                      random_id: 0
+        return:
+            type: 'vkapi'
+            exec: 'messages.send'
+            params: 
+              message: "Параметра args[1] не найден"
+              peer_id: '%vkuser.senderId%'
+              random_id: 0
+    answer:
+      execute:
+        0:
+          type: 'vkapi'
+          exec: 'messages.send'
+          params: 
+            message: "Подключение к серверу...."
+            peer_id: '%vkuser.senderId%'
+            random_id: 0
+        1:
+          type: 'functions'
+          exec: "RconSend"
+          params:
+            ip: "%rcon.ip%"
+            port: "%rcon.rcon_port%"
+            password: "%rcon.rcon_password%"
+            command: "%args[2]%"
+          placeholder: 'RResult'
+      if:
+        0:
+          params: "Placeholders['RResult'].error != null"
+          execute:
+            0:
+              type: 'console'
+              exec: 'error'
+              params: "%rresult.error%"
+          return:
+            type: 'vkapi'
+            exec: 'messages.send'
+            params:
+              message: "ERROR: сервер вернул ошибку датали в консоли"
+              peer_id: '%vkuser.senderId%'
+              random_id: 0
+      return:
+        exec: 'messages.send'
+        params: 
+          message: "Ответ от сервера:\n%rresult.respsone%"
+          peer_id: '%vkuser.senderId%'
+          random_id: 0

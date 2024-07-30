@@ -42,6 +42,18 @@ db:
   #Данный параметр нужен, если вам нужно обновить модели для новой версии (если вы запустили ее).
   #Вы можете вручную добавить строки через sql (если что пишите в лс или в группу если не знаете как)
   alter: false
+  tablename:
+    user: 'RWRcon_User' #ркон юзеры
+    report: 'RWRcon_Report' #репорты
+    blocksymbol: 'RWRcon_BlocklistSymbol' #запрещенный список символов в командах
+    blockcmd: 'RWRcon_BlocklistCmd' #запрещенные команды
+    allowcmd: 'RWRcon_WhitelistCmd' #белый список команд
+    blackcmd: 'RWRcon_BlacklistCmd' #черный список команд
+    rcondata: 'RWRcon_Data' #ркон данные
+    rconstats: 'RWRcon_Stats' #статистика серверов
+    level: 'RWRcon_Level' #ркон уровни
+    prefix: 'RWRcon_Prefix' #префикс серверов
+    tgid: 'RWRcon_TGID' #хранение айди тг
 #DEV LOG не касается этих настроек она всегда включен
 logger:
   # true - включить false - отключить
@@ -170,6 +182,7 @@ min_down: 1
 #============================================================#
 commands:
   - id: addlevel
+    enabled: true #необязательный параметр по умпольчанию true
     level: 5
     aliases:
       - rcon addlevel
