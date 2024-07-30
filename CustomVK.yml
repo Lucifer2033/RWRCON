@@ -140,3 +140,4 @@
           message: "Ответ от сервера:\n%rresult.respsone%"
           peer_id: '%vkuser.senderId%'
           random_id: 0
+          

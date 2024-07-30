@@ -24,3 +24,4 @@
             params: #параметры для tgapi в данном случае для метода sendMessage
               text: "hello %user.pref%" #сообщение
               chat_id: '%tguser.chat.id%'  #кому одать сообщение
+              
