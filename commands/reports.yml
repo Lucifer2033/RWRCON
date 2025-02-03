@@ -1,0 +1,100 @@
+discord:
+  name: репорты
+  description: показать репорты.
+  options:
+    - name: id
+      description: айди репорта
+      type: 4
+      required: true
+  enabled: true
+  level: 2
+  aliases:
+    - репорты
+telegram:
+  command: репорты
+  description: показать репорты.
+  enabled: true
+  level: 2
+  aliases:
+    - репорты
+VK:
+  enabled: true
+  level: 2
+  aliases:
+    - репорты
+#==============================#
+# +--------------------------+ #
+# |       placeholders       | #
+# +--------------------------+ #
+# | доступные в этой команде | #
+# +--------------------------+ #
+# | %report.id%              | #
+# | %report.sender%          | #
+# | %report.messages%        | #
+# +--------------------------+ #
+# | %targetuser.id%          | #
+# | %targetuser.pref%        | #
+# | %targetuser.level%       | #
+# | %targetuser.ban%         | #
+# | %targetuser.vkid%        | #
+# | %targetuser.tgid%        | #
+# | %targetuser.ablc%        | #
+# | %targetuser.absl%        | #
+# +--------------------------+ #
+# | %targetlevel.id%         | #
+# | %targetlevel.name%       | #
+# | %targetlevel.id_name%    | #
+# +--------------------------+ #
+#==============================#
+Message:
+  VK:
+    no_user:
+      message: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      message: ⚠ Нет доступа ⚠
+    no_data:
+      id:
+        message: "⚠ Ошибка: Вы не ввели айди репорта. ⚠"
+    notfound:
+      message: ⚠ %user.pref%, репорт с таким ID не найден.
+    no_number_id:
+      message: "⚠ Ошибка: айди репорта только цифра. ⚠"
+    reports:
+      message:
+        - "✏️ ID жалобы: %report.id%\n"
+        - "🗣️ Отправил: %report.sender%\n"
+        - "💬 Cообщение: %report.messages%"
+  TG:
+    no_user:
+      text: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      text: ⚠ Нет доступа ⚠
+    no_data:
+      id:
+        text: "⚠ Ошибка: Вы не ввели айди репорта. ⚠"
+    notfound:
+      text: ⚠ %user.pref%, репорт с таким ID не найден.
+    no_number_id:
+      text: "⚠ Ошибка: айди репорта только цифра. ⚠"
+    reports:
+      text:
+        - "✏️ ID жалобы: %report.id%\n"
+        - "🗣️ Отправил: %report.sender%\n"
+        - "💬 Cообщение: %report.messages%"
+  DS:
+    no_user:
+      content: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      content: ⚠ Нет доступа ⚠
+    no_data:
+      id:
+        content: "⚠ Ошибка: Вы не ввели айди репорта. ⚠"
+    notfound:
+      content: ⚠ %user.pref%, репорт с таким ID не найден.
+    no_number_id:
+      content: "⚠ Ошибка: айди репорта только цифра. ⚠"
+    reports:
+      content:
+        - "✏️ ID жалобы: %report.id%\n"
+        - "🗣️ Отправил: %report.sender%\n"
+        - "💬 Cообщение: %report.messages%"

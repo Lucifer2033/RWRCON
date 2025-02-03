@@ -1,0 +1,101 @@
+discord:
+  name: rcon
+  description: Настройка ркона.
+  options:
+    - name: addlevel
+      description: добавить уровень.
+      type: 1
+      options:
+        - name: name
+          description: Название уровня
+          type: 3
+          required: true
+        - name: idname
+          description: айди имя уровня
+          type: 3
+          required: true
+  enabled: true
+  level: 5
+  aliases:
+    - rcon addlevel
+telegram:
+  command: rcon addlevel
+  description: добавить уровень.
+  enabled: true
+  level: 5
+  aliases:
+    - rcon addlevel
+VK:
+  enabled: true
+  level: 5
+  aliases:
+    - rcon addlevel
+#==============================#
+# +--------------------------+ #
+# |        placeholders      | #
+# +--------------------------+ #
+# | доступные в этой команде | #
+# +--------------------------+ #
+# | %targetuser.id%          | #
+# | %targetuser.pref%        | #
+# | %targetuser.level%       | #
+# | %targetuser.ban%         | #
+# | %targetuser.vkid%        | #
+# | %targetuser.tgid%        | #
+# | %targetuser.ablc%        | #
+# | %targetuser.absl%        | #
+# +--------------------------+ #
+# | %targetlevel.id%         | #
+# | %targetlevel.name%       | #
+# | %targetlevel.id_name%    | #
+# +--------------------------+ #
+#==============================#
+Message:
+  VK:
+    no_user:
+      message: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      message: ⚠ Нет доступа ⚠
+    no_data:
+      name:
+        message: "⚠ Ошибка: Вы не ввели имя. ⚠"
+      idname:
+        message: "⚠ Ошибка: Вы не ввели айди имя. ⚠"
+    found:
+      message: "⚠ Произошла ошибка: › Данный уровень уже существует"
+    add:
+      message: "Вы успешно добавили уровень: %targetlevel.name% уровень допуска: %targetlevel.id% id name: %targetlevel.id_name%"
+  TG:
+    no_user:
+      text: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+      chat_id: "%tguser.chat.id%"
+    no_permissions:
+      text: ⚠ Нет доступа ⚠
+      chat_id: "%tguser.chat.id%"
+    no_data:
+      name:
+        text: "⚠ Ошибка: Вы не ввели имя. ⚠"
+        chat_id: "%tguser.chat.id%"
+      idname:
+        text: "⚠ Ошибка: Вы не ввели айди имя. ⚠"
+        chat_id: "%tguser.chat.id%"
+    found:
+      text: "⚠ Произошла ошибка: › Данный уровень уже существует"
+      chat_id: "%tguser.chat.id%"
+    add:
+      text: "Вы успешно добавили уровень: %targetlevel.name% уровень допуска: %targetlevel.id% id name: %targetlevel.id_name%"
+      chat_id: "%tguser.chat.id%"
+  DS:
+    no_user:
+      content: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      content: ⚠ Нет доступа ⚠
+    no_data:
+      name:
+        content: "⚠ Ошибка: Вы не ввели имя. ⚠"
+      idname:
+        content: "⚠ Ошибка: Вы не ввели айди имя. ⚠"
+    found:
+      content: "⚠ Произошла ошибка: › Данный уровень уже существует"
+    add:
+      content: "Вы успешно добавили уровень: %targetlevel.name% уровень допуска: %targetlevel.id% id name: %targetlevel.id_name%"

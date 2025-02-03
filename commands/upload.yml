@@ -1,0 +1,39 @@
+discord:
+  name: rcon
+  description: Настройка ркона.
+  options:
+    - name: upload
+      description: Загрузить файлы с командами.
+      type: 1
+  enabled: true
+  level: 4
+  aliases:
+    - rcon upload
+telegram:
+  command: rcon upload
+  description: Загрузить файлы с командами.
+  enabled: true
+  level: 4
+  aliases:
+    - rcon upload
+VK:
+  enabled: true
+  level: 4
+  aliases:
+    - rcon upload
+Message:
+  VK:
+    no_user:
+      message: '⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!'
+    no_permissions:
+      message: '⚠ Нет доступа ⚠'
+  TG:
+    no_user:
+      text: '⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!'
+    no_permissions:
+      text: '⚠ Нет доступа ⚠'
+  DS:
+    no_user:
+      content: '⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!'
+    no_permissions:
+      content: '⚠ Нет доступа ⚠'

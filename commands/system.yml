@@ -1,0 +1,35 @@
+discord:
+  name: system
+  description: Системная информация бота.
+  enabled: true
+  level: 1
+  aliases:
+    - system
+telegram:
+  command: system
+  description: Системная информация бота.
+  enabled: true
+  level: 1
+  aliases:
+    - system
+VK:
+  enabled: true
+  level: 1
+  aliases:
+    - system
+Message:
+  VK:
+    no_user:
+      message: '⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!'
+    no_permissions:
+      message: '⚠ Нет доступа ⚠'
+  TG:
+    no_user:
+      text: '⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!'
+    no_permissions:
+      text: '⚠ Нет доступа ⚠'
+  DS:
+    no_user:
+      content: '⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!'
+    no_permissions:
+      content: '⚠ Нет доступа ⚠'

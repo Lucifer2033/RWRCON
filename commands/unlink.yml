@@ -1,0 +1,161 @@
+discord:
+  name: unlink
+  description: отвязать аккаунт с тг или вк.
+  options:
+    - name: type
+      description: тип аккаунта
+      type: 3
+      required: true
+      choices:
+        - name: VK
+          value: vk
+        - name: TG
+          value: tg
+        - name: DS
+          value: ds
+    - name: user
+      description: пользователь которого нужно привязать
+      type: 6
+      required: true
+    - name: stype
+      description: тип аккаунта
+      type: 3
+      required: true
+      choices:
+        - name: VK
+          value: vk
+        - name: TG
+          value: tg
+        - name: DS
+          value: ds
+    - name: suser
+      description: пользователь которого нужно привязать к первому
+      type: 6
+      required: true
+  enabled: true
+  level: 4
+  aliases:
+    - unlink
+telegram:
+  command: unlink
+  description: отвязать аккаунт с тг или вк.
+  enabled: true
+  level: 4
+  aliases:
+    - unlink
+VK:
+  enabled: true
+  level: 4
+  aliases:
+    - unlink
+#==============================#
+# +--------------------------+ #
+# |        placeholders      | #
+# +--------------------------+ #
+# | доступные в этой команде | #
+# +--------------------------+ #
+# | %targetuser.id%          | #
+# | %targetuser.pref%        | #
+# | %targetuser.level%       | #
+# | %targetuser.ban%         | #
+# | %targetuser.vkid%        | #
+# | %targetuser.tgid%        | #
+# | %targetuser.ablc%        | #
+# | %targetuser.absl%        | #
+# +--------------------------+ #
+# | %targetlevel.id%         | #
+# | %targetlevel.name%       | #
+# | %targetlevel.id_name%    | #
+# +--------------------------+ #
+#==============================#
+Message:
+  VK:
+    no_user:
+      message: '⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!'
+    no_permissions:
+      message: ⚠ Нет доступа ⚠
+    no_data:
+      targettype:
+        message: "⚠ Ошибка: Вы не ввели тип цели. ⚠"
+      targetid:
+        message: "⚠ Ошибка: Вы не ввели айди/ссылку/умпоминие цели. ⚠"
+      settype:
+        message: "⚠ Ошибка: Вы не ввели тип на который надо привязать. ⚠"
+      setid:
+        message: "⚠ Ошибка: Вы не ввели айди/ссылку/умпоминие на который надо привязать. ⚠"
+    undefinedtype:
+      message: "⚠ Ошибка: Данный тип %args[1]% не найден только vk/tg/ds. ⚠"
+    undefinedstype:
+      message: "⚠ Ошибка: Данный тип %args[3]% не найден только vk/tg/ds. ⚠"
+    nofound_user_tg:
+      message: ⚠ Данный тг юзер не найден (возможно он не написал боту тг в лс)
+    nofound_user_vk:
+      message: ⚠ Данный вк юзер не найден
+    nofound_user_ds:
+      message: ⚠ Данный дс юзер не найден (возможно он не написал боту дс в лс)
+    nounlinked_user:
+      message: ⚠ Данный юзер не связанный с акаунтом %args[3]%
+    nomorelinked_accounts:
+      message: ⚠ Данный юзер имеет только %args[1]% его нельзя отвязать
+    main:
+      message: Вы успешно отвязали аккаунт
+  TG:
+    no_user:
+      text: '⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!'
+    no_permissions:
+      text: ⚠ Нет доступа ⚠
+    no_data:
+      targettype:
+        text: "⚠ Ошибка: Вы не ввели тип цели. ⚠"
+      targetid:
+        text: "⚠ Ошибка: Вы не ввели айди/ссылку/умпоминие цели. ⚠"
+      settype:
+        text: "⚠ Ошибка: Вы не ввели тип на который надо привязать. ⚠"
+      setid:
+        text: "⚠ Ошибка: Вы не ввели айди/ссылку/умпоминие на который надо привязать. ⚠"
+    undefinedtype:
+      text: "⚠ Ошибка: Данный тип %args[1]% не найден только vk/tg/ds. ⚠"
+    undefinedstype:
+      text: "⚠ Ошибка: Данный тип %args[3]% не найден только vk/tg/ds. ⚠"
+    nofound_user_tg:
+      text: ⚠ Данный тг юзер не найден (возможно он не написал боту тг в лс)
+    nofound_user_vk:
+      text: ⚠ Данный вк юзер не найден
+    nofound_user_ds:
+      text: ⚠ Данный дс юзер не найден (возможно он не написал боту дс в лс)
+    nounlinked_user:
+      text: ⚠ Данный юзер не связанный с акаунтом %args[3]%
+    nomorelinked_accounts:
+      text: ⚠ Данный юзер имеет только %args[1]% его нельзя отвязать
+    main:
+      text: Вы успешно отвязали аккаунт
+  DS:
+    no_user:
+      content: '⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!'
+    no_permissions:
+      content: ⚠ Нет доступа ⚠
+    no_data:
+      targettype:
+        content: "⚠ Ошибка: Вы не ввели тип цели. ⚠"
+      targetid:
+        content: "⚠ Ошибка: Вы не ввели айди/ссылку/умпоминие цели. ⚠"
+      settype:
+        content: "⚠ Ошибка: Вы не ввели тип на который надо привязать. ⚠"
+      setid:
+        content: "⚠ Ошибка: Вы не ввели айди/ссылку/умпоминие на который надо привязать. ⚠"
+    undefinedtype:
+      content: "⚠ Ошибка: Данный тип %args[1]% не найден только vk/tg/ds. ⚠"
+    undefinedstype:
+      content: "⚠ Ошибка: Данный тип %args[3]% не найден только vk/tg/ds. ⚠"
+    nofound_user_tg:
+      content: ⚠ Данный тг юзер не найден (возможно он не написал боту тг в лс)
+    nofound_user_vk:
+      content: ⚠ Данный вк юзер не найден
+    nofound_user_ds:
+      content: ⚠ Данный дс юзер не найден (возможно он не написал боту дс в лс)
+    nounlinked_user:
+      content: ⚠ Данный юзер не связанный с акаунтом %args[3]%
+    nomorelinked_accounts:
+      content: ⚠ Данный юзер имеет только %args[1]% его нельзя отвязать
+    main:
+      content: Вы успешно отвязали аккаунт

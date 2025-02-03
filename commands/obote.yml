@@ -1,0 +1,56 @@
+discord:
+  name: оботе
+  description: Информация о боте.
+  enabled: true
+  level: 0
+  aliases:
+    - о боте
+telegram:
+  command: о боте
+  description: Информация о боте.
+  enabled: true
+  level: 0
+  aliases:
+    - о боте
+VK:
+  enabled: true
+  level: 0
+  aliases:
+    - о боте
+Message:
+  VK:
+    no_user:
+      message: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      message: ⚠ Нет доступа ⚠
+    obote:
+      message:
+        - "★ Разроботчик/Автор: %bot.author.url%\n"
+        - "★ Название бота: %config.bot.name%\n"
+        - "★ Версия: %bot.version%\n"
+        - "★ Время работы: Дн: %uptime.days% || Ч: %uptime.hours% || Мин: %uptime.minutes% || Сек: %uptime.seconds%\n"
+        - "★ Дата: %time.two%\n"
+  TG:
+    no_user:
+      text: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      text: ⚠ Нет доступа ⚠
+    obote:
+      text:
+        - "★ Разроботчик/Автор: %bot.author.url%\n"
+        - "★ Название бота: %config.bot.name%\n"
+        - "★ Версия: %bot.version%\n"
+        - "★ Время работы: Дн: %uptime.days% || Ч: %uptime.hours% || Мин: %uptime.minutes% || Сек: %uptime.seconds%\n"
+        - "★ Дата: %time.two%\n"
+  DS:
+    no_user:
+      content: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      content: ⚠ Нет доступа ⚠
+    obote:
+      content:
+        - "★ Разроботчик/Автор: %bot.author.url%\n"
+        - "★ Название бота: %config.bot.name%\n"
+        - "★ Версия: %bot.version%\n"
+        - "★ Время работы: Дн: %uptime.days% || Ч: %uptime.hours% || Мин: %uptime.minutes% || Сек: %uptime.seconds%n"
+        - "★ Дата: %time.two%\n"

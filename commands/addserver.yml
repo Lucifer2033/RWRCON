@@ -1,0 +1,144 @@
+discord:
+  name: rcon
+  description: Настройка ркона.
+  options:
+    - name: addserver
+      description: Добавить сервер.
+      type: 1
+      options:
+        - name: ip
+          description: айпи сервера
+          type: 3
+          required: true
+        - name: port
+          description: порт сервера (для мониторинга)
+          type: 4
+          required: true
+        - name: rport
+          description: ркон порт
+          type: 4
+          required: true
+        - name: password
+          description: пароль от ркона
+          type: 3
+          required: true
+        - name: name
+          description: айди имя сервера
+          type: 3
+          required: true
+        - name: prefix
+          description: префикс сервера
+          type: 3
+          required: true
+  enabled: true
+  level: 5
+  aliases:
+    - rcon addserver
+telegram:
+  command: rcon addserver
+  description: добавить сервер.
+  enabled: true
+  level: 5
+  aliases:
+    - rcon addserver
+VK:
+  enabled: true
+  level: 5
+  aliases:
+    - rcon addserver
+#==============================#
+# +--------------------------+ #
+# |        placeholders      | #
+# +--------------------------+ #
+# | доступные в этой команде | #
+# +--------------------------+ #
+# | %rcon.id%                | #
+# | %rcon.name%              | #
+# | %rcon.ip%                | #
+# | %rcon.rcon_port%         | #
+# | %rcon.rcon_password%     | #
+# | %rcon.mode%              | #
+# +--------------------------+ #
+# | %stats.id%               | #
+# | %stats.name%             | #
+# | %stats.player%           | #
+# | %stats.ping%             | #
+# | %stats.status%           | #
+# | %stats.monitors%         | #
+# | %stats.ip%               | #
+# | %stats.port%             | #
+# | %stats.widgets_icon%     | #
+# | %stats.widgets_url%      | #
+# +--------------------------+ #
+# | %prefix.id%              | #
+# | %prefix.name%            | #
+# | %prefix.prefix%          | #
+# +--------------------------+ #
+#==============================#
+Message:
+  VK:
+    no_user:
+      message: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      message: ⚠ Нет доступа ⚠
+    no_data:
+      ip:
+        message: "⚠ Ошибка: Вы не ввели айпи. ⚠"
+      port:
+        message: "⚠ Ошибка: Вы не ввели порт. ⚠"
+      rconport:
+        message: "⚠ Ошибка: Вы не ввели ркон порт. ⚠"
+      password:
+        message: "⚠ Ошибка: Вы не ввели ркон пароль. ⚠"
+      name:
+        message: "⚠ Ошибка: Вы не ввели название. ⚠"
+      prefix:
+        message: "⚠ Ошибка: Вы не ввели префикс сервера. ⚠"
+    found:
+      message: "⚠ Ошибка: данный сервер уже добавлен ⚠"
+    add:
+      message: "Вы успешно добавили сервер: %prefix.prefix%"
+  TG:
+    no_user:
+      text: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      text: ⚠ Нет доступа ⚠
+    no_data:
+      ip:
+        text: "⚠ Ошибка: Вы не ввели айпи. ⚠"
+      port:
+        text: "⚠ Ошибка: Вы не ввели порт. ⚠"
+      rconport:
+        text: "⚠ Ошибка: Вы не ввели ркон порт. ⚠"
+      password:
+        text: "⚠ Ошибка: Вы не ввели ркон пароль. ⚠"
+      name:
+        text: "⚠ Ошибка: Вы не ввели название. ⚠"
+      prefix:
+        text: "⚠ Ошибка: Вы не ввели префикс сервера. ⚠"
+    found:
+      text: "⚠ Ошибка: данный сервер уже добавлен ⚠"
+    add:
+      text: "Вы успешно добавили сервер: %prefix.prefix%"
+  DS:
+    no_user:
+      content: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      content: ⚠ Нет доступа ⚠
+    no_data:
+      ip:
+        content: "⚠ Ошибка: Вы не ввели айпи. ⚠"
+      port:
+        content: "⚠ Ошибка: Вы не ввели порт. ⚠"
+      rconport:
+        content: "⚠ Ошибка: Вы не ввели ркон порт. ⚠"
+      password:
+        content: "⚠ Ошибка: Вы не ввели ркон пароль. ⚠"
+      name:
+        content: "⚠ Ошибка: Вы не ввели название. ⚠"
+      prefix:
+        content: "⚠ Ошибка: Вы не ввели префикс сервера. ⚠"
+    found:
+      content: "⚠ Ошибка: данный сервер уже добавлен ⚠"
+    add:
+      content: "Вы успешно добавили сервер: %prefix.prefix%"

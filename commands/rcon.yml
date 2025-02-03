@@ -1,0 +1,215 @@
+discord:
+  name: rcon
+  description: Настройка ркона.
+  enabled: true
+  level: 1
+  aliases:
+    - rcon
+telegram:
+  command: rcon
+  description: Настройка ркона.
+  enabled: true
+  level: 1
+  aliases:
+    - rcon
+VK:
+  enabled: true
+  level: 1
+  aliases:
+    - rcon
+Message:
+  VK:
+    no_user:
+      message: "⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!"
+    no_permissions:
+      message: "⚠ Нет доступа ⚠"
+    not_found_message_level:
+      message: "⚠ Ошибка: не найдено сообщение для этого уровня в этой команде. ⚠"
+    cons:
+      message:
+        - "🔻 rcon status — Показать работающие севера."
+    mod:
+      message:
+        - "🔻 rcon status — Показать работающие севера."
+    admin:
+      message:
+        - "🔻 rcon usercone [server] — выкл/вкл доступ сервер\n."
+        - "🔻 rcon status — Показать работающие севера.\n"
+        - "🔻 rcon renick [vkid/ссылка] [ник] — Изменить ник для пользователя."
+    gladmin:
+      message:
+        - "🔻 rcon addserver [ip] [port/query port] [rcon port] [password] [id_name] [prefix] — добавить сервер.\n"
+        - "🔻 rcon addblock [server] [cmd] — запретить команду для сервера.\n"
+        - "🔻 rcon removeblock [server] [cmd] — разрешить команду для сервера.\n"
+        - "🔻 rcon addwhite [server] [cmd] — добавить команду в белый список для сервера.\n"
+        - "🔻 rcon removewhite [server] [cmd] — добавить команды из белого списка для сервера.\n"
+        - "🔻 rcon addblack [server] [cmd] — добавить команды в черный список для сервера.\n"
+        - "🔻 rcon removeblack [server] [cmd] — удалить команды из черного списка для сервера.\n"
+        - "🔻 rcon addsymbol [server] [symbol] — добавить символ запрет для сервера.\n"
+        - "🔻 rcon removesymbol [server] [symbol] — удалить символ из запрета для сервера.\n"
+        - "🔻 rcon usercone [server] — выкл/вкл доступ сервер.\n"
+        - "🔻 rcon status — Показать работающие севера.\n"
+        - "🔻 rcon renick [vkid/ссылка] [ник] — Изменить ник для пользователя.\n"
+        - "🔻 rcon upload — Загрузить файлы с командами.\n"
+        - "🔻 rcon rename [sname] [nname/none] [prefix] — сменить название айди имя сервера и по желанию префикс.\n"
+        - "🔻 rcon monitor [server] — выкл/вкл мониторинг сервер.\n"
+        - "🔻 rcon setlvl [vkid/ссылка] [id_name/id] — Установить уровень для пользователя."
+    rukovaditel:
+      message:
+        - "🔻 rcon addserver [ip] [port/query port] [rcon port] [password] [id_name] [prefix] — добавить сервер.\n"
+        - "🔻 rcon addlevel [name] [id_name] — добавить уровень.\n"
+        - "🔻 rcon removeserver [name] — удалить сервер.\n"
+        - "🔻 rcon addblock [server] [cmd] — запретить команду для сервера.\n"
+        - "🔻 rcon removeblock [server] [cmd] — разрешить команду для сервера"
+        - "🔻 rcon addwhite [server] [cmd] — добавить команду в белый список для сервера.\n"
+        - "🔻 rcon removewhite [server] [cmd] — добавить команды из белого списка для сервера.\n"
+        - "🔻 rcon addblack [server] [cmd] — добавить команды в черный список для сервера.\n"
+        - "🔻 rcon removeblack [server] [cmd] — удалить команды из черного списка для сервера.\n"
+        - "🔻 rcon addsymbol [server] [symbol] — добавить символ запрет для сервера.\n"
+        - "🔻 rcon removesymbol [server] [symbol] — удалить символ из запрета для сервера.\n"
+        - "🔻 rcon log [vk/console/file] — вкл/откл логов.\n"
+        - "🔻 rcon usercone [server] — выкл/вкл доступ сервер.\n"
+        - "🔻 rcon addmember [vkid/ссылка] [ник] [id_name level] — Создает аккаунт.\n"
+        - "🔻 rcon removemember [vkid/ссылка] — Удалить аккаунт.\n"
+        - "🔻 rcon setmode [1/2] — Поставить режим блокировки команд.\n"
+        - "🔻 rcon status — Показать работающие севера.\n"
+        - "🔻 rcon renick [vkid/ссылка] [ник] — Изменить ник для пользователя.\n"
+        - "🔻 rcon upload — Загрузить файлы с командами.\n"
+        - "🔻 rcon blallow [vkid/ссылка] — откл/вкл обход черного списка пользователю.\n"
+        - "🔻 rcon rename [sname] [nname/none] [prefix] — сменить название айди имя сервера и по желанию префикс.\n"
+        - "🔻 rcon monitor [server] — выкл/вкл мониторинг сервер.\n"
+        - "🔻 rcon setlvl [vkid/ссылка] [id_name/id] — Установить уровень для пользователя.\n"
+        - "🔻 rcon redata [ip/none]:[port/none] [rport/none] [pass/none] — Изменить данные сервера.\n"
+        - "🔻 rcon unload —  Выгружает таблицы RWRcon_BlacklistCmd, RWRcon_WhitelistCmd и RWRcon_BlocklistCmd в файлы.\n"
+        - "🔻 rcon bsallow [vkid/ссылка] — откл/вкл обход запрета на символы пользователю.\n"
+        - "🔻 rcon relevel [sname] [nname/none] [prefix] — сменить название айди имя уровня и по желанию префикс."
+  TG:
+    no_user:
+      text: "⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!"
+    no_permissions:
+      text: "⚠ Нет доступа ⚠"
+    not_found_message_level:
+      text: "⚠ Ошибка: не найдено сообщение для этого уровня в этой команде. ⚠"
+    cons:
+      text:
+        - "🔻 rcon status — Показать работающие севера."
+    mod:
+      text:
+        - "🔻 rcon status — Показать работающие севера."
+    admin:
+      text:
+        - "🔻 rcon usercone [server] — выкл/вкл доступ сервер.\n"
+        - "🔻 rcon status — Показать работающие севера.\n"
+        - "🔻 rcon renick [vkid/ссылка] [ник] — Изменить ник для пользователя."
+    gladmin:
+      text:
+        - "🔻 rcon addserver [ip] [port/query port] [rcon port] [password] [id_name] [prefix] — добавить сервер.\n"
+        - "🔻 rcon addblock [server] [cmd] — запретить команду для сервера.\n"
+        - "🔻 rcon removeblock [server] [cmd] — разрешить команду для сервера.\n"
+        - "🔻 rcon addwhite [server] [cmd] — добавить команду в белый список для сервера.\n"
+        - "🔻 rcon removewhite [server] [cmd] — добавить команды из белого списка для сервера.\n"
+        - "🔻 rcon addblack [server] [cmd] — добавить команды в черный список для сервера.\n"
+        - "🔻 rcon removeblack [server] [cmd] — удалить команды из черного списка для сервера.\n"
+        - "🔻 rcon addsymbol [server] [symbol] — добавить символ запрет для сервера.\n"
+        - "🔻 rcon removesymbol [server] [symbol] — удалить символ из запрета для сервера.\n"
+        - "🔻 rcon usercone [server] — выкл/вкл доступ сервер.\n"
+        - "🔻 rcon status — Показать работающие севера.\n"
+        - "🔻 rcon renick [vkid/ссылка] [ник] — Изменить ник для пользователя.\n"
+        - "🔻 rcon upload — Загрузить файлы с командами.\n"
+        - "🔻 rcon rename [sname] [nname/none] [prefix] — сменить название айди имя сервера и по желанию префикс.\n"
+        - "🔻 rcon monitor [server] — выкл/вкл мониторинг сервер.\n"
+        - "🔻 rcon setlvl [vkid/ссылка] [id_name/id] — Установить уровень для пользователя."
+    rukovaditel:
+      text:
+        - "🔻 rcon addserver [ip] [port/query port] [rcon port] [password] [id_name] [prefix] — добавить сервер.\n"
+        - "🔻 rcon addlevel [name] [id_name] — добавить уровень.\n"
+        - "🔻 rcon removeserver [name] — удалить сервер.\n"
+        - "🔻 rcon addblock [server] [cmd] — запретить команду для сервера.\n"
+        - "🔻 rcon removeblock [server] [cmd] — разрешить команду для сервера.\n"
+        - "🔻 rcon addwhite [server] [cmd] — добавить команду в белый список для сервера.\n"
+        - "🔻 rcon removewhite [server] [cmd] — добавить команды из белого списка для сервера.\n"
+        - "🔻 rcon addblack [server] [cmd] — добавить команды в черный список для сервера.\n"
+        - "🔻 rcon removeblack [server] [cmd] — удалить команды из черного списка для сервера.\n"
+        - "🔻 rcon addsymbol [server] [symbol] — добавить символ запрет для сервера.\n"
+        - "🔻 rcon removesymbol [server] [symbol] — удалить символ из запрета для сервера.\n"
+        - "🔻 rcon log [vk/console/file] — вкл/откл логов.\n"
+        - "🔻 rcon usercone [server] — выкл/вкл доступ сервер.\n"
+        - "🔻 rcon addmember [vkid/ссылка] [ник] [id_name level] — Создает аккаунт.\n"
+        - "🔻 rcon removemember [vkid/ссылка] — Удалить аккаунт.\n"
+        - "🔻 rcon setmode [1/2] — Поставить режим блокировки команд.\n"
+        - "🔻 rcon status — Показать работающие севера.\n"
+        - "🔻 rcon renick [vkid/ссылка] [ник] — Изменить ник для пользователя.\n"
+        - "🔻 rcon upload — Загрузить файлы с командами.\n"
+        - "🔻 rcon blallow [vkid/ссылка] — откл/вкл обход черного списка пользователю.\n"
+        - "🔻 rcon rename [sname] [nname/none] [prefix] — сменить название айди имя сервера и по желанию префикс.\n"
+        - "🔻 rcon monitor [server] — выкл/вкл мониторинг сервер.\n"
+        - "🔻 rcon setlvl [vkid/ссылка] [id_name/id] — Установить уровень для пользователя.\n"
+        - "🔻 rcon redata [ip/none]:[port/none] [rport/none] [pass/none] — Изменить данные сервера.\n"
+        - "🔻 rcon unload —  Выгружает таблицы RWRcon_BlacklistCmd, RWRcon_WhitelistCmd и RWRcon_BlocklistCmd в файлы.\n"
+        - "🔻 rcon bsallow [vkid/ссылка] — откл/вкл обход запрета на символы пользователю.\n"
+        - "🔻 rcon relevel [sname] [nname/none] [prefix] — сменить название айди имя уровня и по желанию префикс."
+  DS:
+    no_user:
+      content: "⚠ У Вас недостаточно прав для использования бота! Приобретите с[CONSOLE] и Вы сможете использовать команды!"
+    no_permissions:
+      content: "⚠ Нет доступа ⚠"
+    not_found_message_level:
+      content: "⚠ Ошибка: не найдено сообщение для этого уровня в этой команде. ⚠"
+    cons:
+      content:
+        - "🔻 rcon status — Показать работающие севера."
+    mod:
+      content:
+        - "🔻 rcon status — Показать работающие севера."
+    admin:
+      content:
+        - "🔻 rcon usercone [server] — выкл/вкл доступ сервер.\n"
+        - "🔻 rcon status — Показать работающие севера.\n"
+        - "🔻 rcon renick [vkid/ссылка] [ник] — Изменить ник для пользователя.\n"
+    gladmin:
+      content:
+        - "🔻 rcon addserver [ip] [port/query port] [rcon port] [password] [id_name] [prefix] — добавить сервер.\n"
+        - "🔻 rcon addblock [server] [cmd] — запретить команду для сервера.\n"
+        - "🔻 rcon removeblock [server] [cmd] — разрешить команду для сервера.\n"
+        - "🔻 rcon addwhite [server] [cmd] — добавить команду в белый список для сервера.\n"
+        - "🔻 rcon removewhite [server] [cmd] — добавить команды из белого списка для сервера.\n"
+        - "🔻 rcon addblack [server] [cmd] — добавить команды в черный список для сервера.\n"
+        - "🔻 rcon removeblack [server] [cmd] — удалить команды из черного списка для сервера.\n"
+        - "🔻 rcon addsymbol [server] [symbol] — добавить символ запрет для сервера.\n"
+        - "🔻 rcon removesymbol [server] [symbol] — удалить символ из запрета для сервера.\n"
+        - "🔻 rcon usercone [server] — выкл/вкл доступ сервер.\n"
+        - "🔻 rcon status — Показать работающие севера.\n"
+        - "🔻 rcon renick [vkid/ссылка] [ник] — Изменить ник для пользователя.\n"
+        - "🔻 rcon upload — Загрузить файлы с командами.\n"
+        - "🔻 rcon rename [sname] [nname/none] [prefix] — сменить название айди имя сервера и по желанию префикс.\n"
+        - "🔻 rcon monitor [server] — выкл/вкл мониторинг сервер.\n"
+        - "🔻 rcon setlvl [vkid/ссылка] [id_name/id] — Установить уровень для пользователя."
+    rukovaditel:
+      content:
+        - "🔻 rcon addserver [ip] [port/query port] [rcon port] [password] [id_name] [prefix] — добавить сервер.\n"
+        - "🔻 rcon addlevel [name] [id_name] — добавить уровень.\n"
+        - "🔻 rcon removeserver [name] — удалить сервер.\n"
+        - "🔻 rcon addblock [server] [cmd] — запретить команду для сервера.\n"
+        - "🔻 rcon removeblock [server] [cmd] — разрешить команду для сервера"
+        - "🔻 rcon addwhite [server] [cmd] — добавить команду в белый список для сервера.\n"
+        - "🔻 rcon removewhite [server] [cmd] — добавить команды из белого списка для сервера.\n"
+        - "🔻 rcon addblack [server] [cmd] — добавить команды в черный список для сервера.\n"
+        - "🔻 rcon removeblack [server] [cmd] — удалить команды из черного списка для сервера.\n"
+        - "🔻 rcon addsymbol [server] [symbol] — добавить символ запрет для сервера.\n"
+        - "🔻 rcon removesymbol [server] [symbol] — удалить символ из запрета для сервера.\n"
+        - "🔻 rcon log [vk/console/file] — вкл/откл логов.\n"
+        - "🔻 rcon usercone [server] — выкл/вкл доступ сервер.\n"
+        - "🔻 rcon addmember [vkid/ссылка] [ник] [id_name level] — Создает аккаунт.\n"
+        - "🔻 rcon removemember [vkid/ссылка] — Удалить аккаунт.\n"
+        - "🔻 rcon setmode [1/2] — Поставить режим блокировки команд.\n"
+        - "🔻 rcon status — Показать работающие севера.\n"
+        - "🔻 rcon renick [vkid/ссылка] [ник] — Изменить ник для пользователя.\n"
+        - "🔻 rcon upload — Загрузить файлы с командами.\n"
+        - "🔻 rcon blallow [vkid/ссылка] — откл/вкл обход черного списка пользователю.\n"
+        - "🔻 rcon rename [sname] [nname/none] [prefix] — сменить название айди имя сервера и по желанию префикс.\n"
+        - "🔻 rcon monitor [server] — выкл/вкл мониторинг сервер.\n"
+        - "🔻 rcon setlvl [vkid/ссылка] [id_name/id] — Установить уровень для пользователя.\n"
+        - "🔻 rcon redata [ip/none]:[port/none] [rport/none] [pass/none] — Изменить данные сервера.\n"
+        - "🔻 rcon unload —  Выгружает таблицы RWRcon_BlacklistCmd, RWRcon_WhitelistCmd и RWRcon_BlocklistCmd в файлы.\n"
+        - "🔻 rcon bsallow [vkid/ссылка] — откл/вкл обход запрета на символы пользователю.\n"
+        - "🔻 rcon relevel [sname] [nname/none] [prefix] — сменить название айди имя уровня и по желанию префикс."

@@ -1,0 +1,113 @@
+discord:
+  name: give
+  description: выдать доступ к серверу.
+  options:
+    - name: idname
+      description: айди имя сервера
+      type: 3
+      required: true
+    - name: user
+      description: пользователь которому выдать доступ
+      type: 6
+      required: true
+  enabled: true
+  level: 3
+  aliases:
+    - give
+telegram:
+  command: give
+  description: выдать доступ к серверу.
+  enabled: true
+  level: 3
+  aliases:
+    - give
+VK:
+  enabled: true
+  level: 3
+  aliases:
+    - give
+#==============================#
+# +--------------------------+ #
+# |       placeholders       | #
+# +--------------------------+ #
+# | доступные в этой команде | #
+# +--------------------------+ #
+# | %targetuser.id%          | #
+# | %targetuser.pref%        | #
+# | %targetuser.level%       | #
+# | %targetuser.ban%         | #
+# | %targetuser.vkid%        | #
+# | %targetuser.tgid%        | #
+# | %targetuser.ablc%        | #
+# | %targetuser.absl%        | #
+# +--------------------------+ #
+# | %targetlevel.id%         | #
+# | %targetlevel.name%       | #
+# | %targetlevel.id_name%    | #
+# +--------------------------+ #
+# | %prefix.id%              | #
+# | %prefix.name%            | #
+# | %prefix.prefix%          | #
+# +--------------------------+ #
+#==============================#
+Message:
+  VK:
+    no_user:
+      message: '⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!'
+    no_permissions:
+      message: ⚠ Нет доступа ⚠
+    no_data:
+      server:
+        message: "⚠ Ошибка: Вы не ввели айди имя сервера. ⚠"
+      id:
+        message: "⚠ Ошибка: Вы не ввели айди/ссылку/умпоминие. ⚠"
+    no_user_vk:
+      message: ⚠ Данный вк юзер не найден
+    yourself_add_server:
+      message: ⚠ Нельзя себе дать доступ к серверу. ⚠
+    not_found_server:
+      message: ⚠ Данный сервер не найден. ⚠
+    user_server:
+      message: ⚠ Данный пользователь уже имеет доступ к этому серверу.
+    user_give_server:
+      message: "Вы выдали доступ к серверу: %prefix.prefix%"
+  TG:
+    no_user:
+      text: '⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!'
+    no_permissions:
+      text: ⚠ Нет доступа ⚠
+    no_data:
+      server:
+        text: "⚠ Ошибка: Вы не ввели айди имя сервера. ⚠"
+      id:
+        text: "⚠ Ошибка: Вы не ввели айди/ссылку/умпоминие. ⚠"
+    no_user_tg:
+      text: ⚠ Данный тг юзер не найден
+    yourself_add_server:
+      text: ⚠ Нельзя себе дать доступ к серверу. ⚠
+    not_found_server:
+      text: ⚠ Данный сервер не найден. ⚠
+    user_server:
+      text: ⚠ Данный пользователь уже имеет доступ к этому серверу.
+    user_give_server:
+      text: "Вы выдали доступ к серверу: %prefix.prefix%"
+  DS:
+    no_user:
+      content: '⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!'
+    no_permissions:
+      content: ⚠ Нет доступа ⚠
+    no_data:
+      server:
+        content: "⚠ Ошибка: Вы не ввели айди имя сервера. ⚠"
+      id:
+        content: "⚠ Ошибка: Вы не ввели айди/ссылку/умпоминие. ⚠"
+    no_user_ds:
+      content: ⚠ Данный дс юзер не найден
+    yourself_add_server:
+      content: ⚠ Нельзя себе дать доступ к серверу. ⚠
+    not_found_server:
+      content: ⚠ Данный сервер не найден. ⚠
+    user_server:
+      content: ⚠ Данный пользователь уже имеет доступ к этому серверу.
+    user_give_server:
+      content: "Вы выдали доступ к серверу: %prefix.prefix%"

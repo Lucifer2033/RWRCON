@@ -1,0 +1,113 @@
+discord:
+  name: ответ
+  description: ответит на репорт.
+  options:
+    - name: id
+      description: айди репорта
+      type: 4
+      required: true
+    - name: text
+      description: ответ на репорт
+      type: 3
+      required: true
+  enabled: true
+  level: 2
+  aliases:
+    - ответ
+telegram:
+  command: ответ
+  description: ответит на репорт.
+  enabled: true
+  level: 2
+  aliases:
+    - ответ
+VK:
+  enabled: true
+  level: 2
+  aliases:
+    - ответ
+#==============================#
+# +--------------------------+ #
+# |        placeholders      | #
+# +--------------------------+ #
+# | доступные в этой команде | #
+# +--------------------------+ #
+# | %report.id%              | #
+# | %report.sender%          | #
+# | %report.messages%        | #
+# +--------------------------+ #
+# | %targetuser.id%          | #
+# | %targetuser.pref%        | #
+# | %targetuser.level%       | #
+# | %targetuser.ban%         | #
+# | %targetuser.vkid%        | #
+# | %targetuser.tgid%        | #
+# | %targetuser.ablc%        | #
+# | %targetuser.absl%        | #
+# +--------------------------+ #
+# | %targetlevel.id%         | #
+# | %targetlevel.name%       | #
+# | %targetlevel.id_name%    | #
+# +--------------------------+ #
+#==============================#
+Message:
+  VK:
+    no_user:
+      message: '⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!'
+    no_permissions:
+      message: ⚠ Нет доступа ⚠
+    no_data:
+      id:
+        message: "⚠ Ошибка: Вы не ввели айди репорта. ⚠"
+      text:
+        message: "⚠ Ошибка: Вы не ввели сообщение репорта. ⚠"
+    no_number_id:
+      message: "⚠ Ошибка: айди репорта только цифра. ⚠"
+    notfound_report:
+      message: "%user.pref%, репорт с таким ID не найден, или на него уже ответил
+        другой администратор ☹️"
+    otvet_send:
+      message: 🔔 *id%targetuser.vkid% (%targetuser.pref%), на ваше сообщение №%report.id% поступил ответ:💬 %args[2]%
+      user_id: "%targetuser.vkid%"
+      random_id: 0
+    otvet_result:
+      message: "%user.pref%, ответ доставлен. 👍"
+  TG:
+    no_user:
+      text: '⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!'
+    no_permissions:
+      text: ⚠ Нет доступа ⚠
+    no_data:
+      id:
+        text: "⚠ Ошибка: Вы не ввели айди репорта. ⚠"
+      text:
+        text: "⚠ Ошибка: Вы не ввели сообщение репорта. ⚠"
+    no_number_id:
+      text: "⚠ Ошибка: айди репорта только цифра. ⚠"
+    notfound_report:
+      text: "%user.pref%, репорт с таким ID не найден, или на него уже ответил другой администратор ☹️"
+    otvet_send:
+      text: 🔔 [%targetuser.pref%](tg://user?id=%targetuser.tgid%), на ваше сообщение №%report.id% поступил ответ:💬 %args[2]%
+      chat_id: "%report.sender%"
+      parse_mode: Markdown
+    otvet_result:
+      text: "%user.pref%, ответ доставлен. 👍"
+  DS:
+    no_user:
+      content: '⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!'
+    no_permissions:
+      content: ⚠ Нет доступа ⚠
+    no_data:
+      id:
+        content: "⚠ Ошибка: Вы не ввели айди репорта. ⚠"
+      text:
+        content: "⚠ Ошибка: Вы не ввели сообщение репорта. ⚠"
+    no_number_id:
+      content: "⚠ Ошибка: айди репорта только цифра. ⚠"
+    notfound_report:
+      content: "%user.pref%, репорт с таким ID не найден, или на него уже ответил другой администратор ☹️"
+    otvet_send:
+      content: 🔔 [%targetuser.pref%](https://discordapp.com/users/%targetuser.dsid%), на ваше сообщение №%report.id% поступил ответ:💬 %args[2]%
+      channel_id: "%report.sender%"
+    otvet_result:
+      content: "%user.pref%, ответ доставлен. 👍"

@@ -1,0 +1,96 @@
+discord:
+  name: rcon
+  description: Настройка ркона.
+  options:
+    - name: removeblack
+      description: удалить команды из черного списка для сервера.
+      type: 1
+      options:
+        - name: idname
+          description: айди имя сервера
+          type: 3
+          required: true
+        - name: command
+          description: команда которую надо убрать из списка
+          type: 3
+          required: true
+  enabled: true
+  level: 4
+  aliases:
+    - rcon removeblack
+telegram:
+  command: rcon removeblack
+  description: удалить команды из черного списка для сервера.
+  enabled: true
+  level: 4
+  aliases:
+    - rcon removeblack
+VK:
+  enabled: true
+  level: 4
+  aliases:
+    - rcon removeblack
+#==============================#
+# +--------------------------+ #
+# |        placeholders      | #
+# +--------------------------+ #
+# | доступные в этой команде | #
+# +--------------------------+ #
+# | %blacklist.id%           | #
+# | %blacklist.cmd%          | #
+# | %blacklist.server%       | #
+# +--------------------------+ #
+# | %prefix.id%              | #
+# | %prefix.name%            | #
+# | %prefix.prefix%          | #
+# +--------------------------+ #
+#==============================#
+Message:
+  VK:
+    no_user:
+      message: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      message: ⚠ Нет доступа ⚠
+    no_data:
+      server:
+        message: "⚠ Ошибка: Вы не ввели айди имя сервера. ⚠"
+      cmd:
+        message: "⚠ Ошибка: Вы не ввели команду для разблокировки. ⚠"
+    not_found_server:
+      message: ⚠ Данный сервер не найден. ⚠
+    not_found_cmd:
+      message: "⚠ Ошибка: данная команда не найдена. ⚠"
+    unblock_cmd:
+      message: Вы разблокировали %blacklist.cmd%
+  TG:
+    no_user:
+      text: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      text: ⚠ Нет доступа ⚠
+    no_data:
+      server:
+        text: "⚠ Ошибка: Вы не ввели айди имя сервера. ⚠"
+      cmd:
+        text: "⚠ Ошибка: Вы не ввели команду для разблокировки. ⚠"
+    not_found_server:
+      text: ⚠ Данный сервер не найден. ⚠
+    not_found_cmd:
+      text: "⚠ Ошибка: данная команда не найдена. ⚠"
+    unblock_cmd:
+      text: Вы разблокировали %blacklist.cmd%
+  DS:
+    no_user:
+      content: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      content: ⚠ Нет доступа ⚠
+    no_data:
+      server:
+        content: "⚠ Ошибка: Вы не ввели айди имя сервера. ⚠"
+      cmd:
+        content: "⚠ Ошибка: Вы не ввели команду для разблокировки. ⚠"
+    not_found_server:
+      content: ⚠ Данный сервер не найден. ⚠
+    not_found_cmd:
+      content: "⚠ Ошибка: данная команда не найдена. ⚠"
+    unblock_cmd:
+      content: Вы разблокировали %blacklist.cmd%

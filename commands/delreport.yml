@@ -1,0 +1,78 @@
+discord:
+  name: rmreport
+  description: удалить репорт.
+  options:
+    - name: id
+      description: айди репорта
+      type: 4
+      required: true
+  enabled: true
+  level: 2
+  aliases:
+    - rmreport
+telegram:
+  command: rmreport
+  description: удалить репорт.
+  enabled: true
+  level: 2
+  aliases:
+    - rmreport
+VK:
+  enabled: true
+  level: 2
+  aliases:
+    - rmreport
+#==============================#
+# +--------------------------+ #
+# |       placeholders       | #
+# +--------------------------+ #
+# | доступные в этой команде | #
+# +--------------------------+ #
+# | %report.id%              | #
+# | %report.sender%          | #
+# | %report.messages%        | #
+# +--------------------------+ #
+#==============================#
+Message:
+  VK:
+    no_user:
+      message: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      message: ⚠ Нет доступа ⚠
+    no_data:
+      id:
+        message: "⚠ Ошибка: Вы не ввели айди репорита. ⚠"
+    no_number_id:
+      message: "⚠ Ошибка: айди репорта только цифра. ⚠"
+    notfound:
+      message: ⚠ %user.pref%, репорт с таким ID не найден.
+    main:
+      message: Вы успешно удалили репорт №%report.id%
+  TG:
+    no_user:
+      text: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      text: ⚠ Нет доступа ⚠
+    no_data:
+      id:
+        text: "⚠ Ошибка: Вы не ввели айди репорита. ⚠"
+    no_number_id:
+      text: "⚠ Ошибка: айди репорта только цифра. ⚠"
+    notfound:
+      text: ⚠ %user.pref%, репорт с таким ID не найден.
+    main:
+      text: Вы успешно удалили репорт №%report.id%
+  DS:
+    no_user:
+      content: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      content: ⚠ Нет доступа ⚠
+    no_data:
+      id:
+        content: "⚠ Ошибка: Вы не ввели айди репорита. ⚠"
+    no_number_id:
+      content: "⚠ Ошибка: айди репорта только цифра. ⚠"
+    notfound:
+      content: ⚠ %user.pref%, репорт с таким ID не найден.
+    main:
+      content: Вы успешно удалили репорт №%report.id%

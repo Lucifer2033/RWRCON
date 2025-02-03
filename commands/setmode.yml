@@ -1,0 +1,134 @@
+discord:
+  name: rcon
+  description: Настройка ркона.
+  options:
+    - name: setmode
+      description: Поставить режим блокировки команд.
+      type: 1
+      options:
+        - name: idname
+          description: айди имя сервера
+          type: 3
+          required: true
+        - name: type
+          description: тип блокировки
+          type: 4
+          required: true
+          choices:
+            - name: Стандартная
+              value: 1
+            - name: Белый Список
+              value: 2
+  enabled: true
+  level: 5
+  aliases:
+    - rcon setmode
+telegram:
+  command: rcon setmode
+  description: Поставить режим блокировки команд.
+  enabled: true
+  level: 5
+  aliases:
+    - rcon setmode
+VK:
+  enabled: true
+  level: 5
+  aliases:
+    - rcon setmode
+#==============================#
+# +--------------------------+ #
+# |        placeholders      | #
+# +--------------------------+ #
+# | доступные в этой команде | #
+# +--------------------------+ #
+# | %prefix.id%              | #
+# | %prefix.name%            | #
+# | %prefix.prefix%          | #
+# +--------------------------+ #
+# | %rcon.id%                | #
+# | %rcon.name%              | #
+# | %rcon.ip%                | #
+# | %rcon.rcon_port%         | #
+# | %rcon.rcon_password%     | #
+# | %rcon.mode%              | #
+# +--------------------------+ #
+#==============================#
+Message:
+  VK:
+    no_user:
+      message: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      message: ⚠ Нет доступа ⚠
+    no_data:
+      id:
+        message: "⚠ Ошибка: Вы не ввели айди режима блокировки. ⚠"
+      server:
+        message: "⚠ Ошибка: Вы не ввели айди имя сервера. ⚠"
+    no_number_id:
+      message: "⚠ Ошибка: айди режима блокировки только цифра. ⚠"
+    set:
+      one:
+        message: "Был выбран режим блокировки кмд: Все кроме заблокироанных."
+      two:
+        message: "Был выбран режим блокировки кмд: Белый список."
+    alreadyset:
+      one:
+        message: Первый режим уже установлен
+      two:
+        message: Второй режим уже установлен
+    not_found_server:
+      message: ⚠ Данный сервер не найден. ⚠
+    nofound_mode:
+      message: Данный режим не найден
+  TG:
+    no_user:
+      text: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      text: ⚠ Нет доступа ⚠
+    no_data:
+      id:
+        text: "⚠ Ошибка: Вы не ввели айди режима блокировки. ⚠"
+      server:
+        text: "⚠ Ошибка: Вы не ввели айди имя сервера. ⚠"
+    no_number_id:
+      text: "⚠ Ошибка: айди режима блокировки только цифра. ⚠"
+    set:
+      one:
+        text: "Был выбран режим блокировки кмд: Все кроме заблокироанных."
+      two:
+        text: "Был выбран режим блокировки кмд: Белый список."
+    alreadyset:
+      one:
+        text: Первый режим уже установлен
+      two:
+        text: Второй режим уже установлен
+    not_found_server:
+      text: ⚠ Данный сервер не найден. ⚠
+    nofound_mode:
+      text: Данный режим не найден
+  DS:
+    no_user:
+      content: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      content: ⚠ Нет доступа ⚠
+    no_data:
+      id:
+        content: "⚠ Ошибка: Вы не ввели айди режима блокировки. ⚠"
+      server:
+        content: "⚠ Ошибка: Вы не ввели айди имя сервера. ⚠"
+    no_number_id:
+      content: "⚠ Ошибка: айди режима блокировки только цифра. ⚠"
+    set:
+      one:
+        content: "Был выбран режим блокировки кмд: Все кроме заблокироанных."
+      two:
+        content: "Был выбран режим блокировки кмд: Белый список."
+    alreadyset:
+      one:
+        content: Первый режим уже установлен
+      two:
+        content: Второй режим уже установлен
+    not_found_server:
+      content: ⚠ Данный сервер не найден. ⚠
+    nofound_mode:
+      content: Данный режим не найден

@@ -1,0 +1,94 @@
+discord:
+  name: rcon
+  description: Настройка ркона.
+  options:
+    - name: removeserver
+      description: удалить сервер.
+      type: 1
+      options:
+        - name: idname
+          description: айди имя сервера
+          type: 3
+          required: true
+  enabled: true
+  level: 5
+  aliases:
+    - rcon removeserver
+telegram:
+  command: rcon removeserver
+  description: удалить сервер.
+  enabled: true
+  level: 5
+  aliases:
+    - rcon removeserver
+VK:
+  enabled: true
+  level: 5
+  aliases:
+    - rcon removeserver
+#==============================#
+# +--------------------------+ #
+# |         placeholders     | #
+# +--------------------------+ #
+# | доступные в этой команде | #
+# +--------------------------+ #
+# | %rcon.id%                | #
+# | %rcon.name%              | #
+# | %rcon.ip%                | #
+# | %rcon.rcon_port%         | #
+# | %rcon.rcon_password%     | #
+# | %rcon.mode%              | #
+# +--------------------------+ #
+# | %stats.id%               | #
+# | %stats.name%             | #
+# | %stats.player%           | #
+# | %stats.ping%             | #
+# | %stats.status%           | #
+# | %stats.monitors%         | #
+# | %stats.ip%               | #
+# | %stats.port%             | #
+# | %stats.widgets_icon%     | #
+# | %stats.widgets_url%      | #
+# +--------------------------+ #
+# | %prefix.id%              | #
+# | %prefix.name%            | #
+# | %prefix.prefix%          | #
+# +--------------------------+ #
+#==============================#
+Message:
+  VK:
+    no_user:
+      message: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      message: ⚠ Нет доступа ⚠
+    no_data:
+      name:
+        message: "⚠ Ошибка: Вы не ввели айди имя сервера. ⚠"
+    not_found_server:
+      message: ⚠ Данный сервер не найден. ⚠
+    delete_server:
+      message: "Вы успешно удалили сервер: %prefix.prefix%"
+  TG:
+    no_user:
+      text: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      text: ⚠ Нет доступа ⚠
+    no_data:
+      name:
+        text: "⚠ Ошибка: Вы не ввели айди имя сервера. ⚠"
+    not_found_server:
+      text: ⚠ Данный сервер не найден. ⚠
+    delete_server:
+      text: "Вы успешно удалили сервер: %prefix.prefix%"
+  DS:
+    no_user:
+      content: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      content: ⚠ Нет доступа ⚠
+    no_data:
+      name:
+        content: "⚠ Ошибка: Вы не ввели айди имя сервера. ⚠"
+    not_found_server:
+      content: ⚠ Данный сервер не найден. ⚠
+    delete_server:
+      content: "Вы успешно удалили сервер: %prefix.prefix%"

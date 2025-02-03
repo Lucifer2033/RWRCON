@@ -1,0 +1,41 @@
+discord:
+  name: rcon
+  description: Настройка ркона.
+  options:
+    - name: unload
+      description: Выгружает таблицы RWRcon_BlacklistCmd, RWRcon_WhitelistCmd и
+        RWRcon_BlocklistCmd в файлы.
+      type: 1
+  enabled: true
+  level: 5
+  aliases:
+    - rcon unload
+telegram:
+  command: rcon unload
+  description: Выгружает таблицы RWRcon_BlacklistCmd, RWRcon_WhitelistCmd и
+    RWRcon_BlocklistCmd в файлы.
+  enabled: true
+  level: 5
+  aliases:
+    - rcon unload
+VK:
+  enabled: true
+  level: 5
+  aliases:
+    - rcon unload
+Message:
+  VK:
+    no_user:
+      message: '⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!'
+    no_permissions:
+      message: '⚠ Нет доступа ⚠'
+  TG:
+    no_user:
+      text: '⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!'
+    no_permissions:
+      text: '⚠ Нет доступа ⚠'
+  DS:
+    no_user:
+      content: '⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!'
+    no_permissions:
+      content: '⚠ Нет доступа ⚠'

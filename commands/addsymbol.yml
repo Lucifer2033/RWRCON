@@ -1,0 +1,96 @@
+discord:
+  name: rcon
+  description: Настройка ркона.
+  options:
+    - name: addsymbol
+      description: Запретить отправлять команды, содержащие символом.
+      type: 1
+      options:
+        - name: idname
+          description: айди имя сервера
+          type: 3
+          required: true
+        - name: symbol
+          description: символ который надо запретить
+          type: 3
+          required: true
+  enabled: true
+  level: 4
+  aliases:
+    - rcon addsymbol
+telegram:
+  command: rcon addsymbol
+  description: Запретить отправлять команды, содержащие символом
+  enabled: true
+  level: 4
+  aliases:
+    - rcon addsymbol
+VK:
+  enabled: true
+  level: 4
+  aliases:
+    - rcon addsymbol
+#==============================#
+# +--------------------------+ #
+# |       placeholders       | #
+# +--------------------------+ #
+# | доступные в этой команде | #
+# +--------------------------+ #
+# | %symbollist.id%          | #
+# | %symbollist.symbol%      | #
+# | %symbollist.server%      | #
+# +--------------------------+ #
+# | %prefix.id%              | #
+# | %prefix.name%            | #
+# | %prefix.prefix%          | #
+# +--------------------------+ #
+#==============================#
+Message:
+  VK:
+    no_user:
+      message: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      message: ⚠ Нет доступа ⚠
+    no_data:
+      server:
+        message: "⚠ Ошибка: Вы не ввели сервер. ⚠"
+      symbol:
+        message: "⚠ Ошибка: Вы не ввели символ. ⚠"
+    not_found_server:
+      message: ⚠ Данный сервер не найден. ⚠
+    blocked_symbol:
+      message: Данный символ и так запрещен
+    block_symbol:
+      message: "Вы успешно запретели доступ к вводу символу: %symbollist.symbol%"
+  TG:
+    no_user:
+      text: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      text: ⚠ Нет доступа ⚠
+    no_data:
+      server:
+        text: "⚠ Ошибка: Вы не ввели сервер. ⚠"
+      symbol:
+        text: "⚠ Ошибка: Вы не ввели символ. ⚠"
+    not_found_server:
+      text: ⚠ Данный сервер не найден. ⚠
+    blocked_symbol:
+      text: Данный символ и так запрещен
+    block_symbol:
+      text: "Вы успешно запретели доступ к вводу символу: %symbollist.symbol%"
+  DS:
+    no_user:
+      content: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      content: ⚠ Нет доступа ⚠
+    no_data:
+      server:
+        content: "⚠ Ошибка: Вы не ввели сервер. ⚠"
+      symbol:
+        content: "⚠ Ошибка: Вы не ввели символ. ⚠"
+    not_found_server:
+      content: ⚠ Данный сервер не найден. ⚠
+    blocked_symbol:
+      content: Данный символ и так запрещен
+    block_symbol:
+      content: "Вы успешно запретели доступ к вводу символу: %symbollist.symbol%"

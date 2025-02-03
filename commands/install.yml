@@ -1,0 +1,62 @@
+discord:
+  name: install
+  description: Первоначальной установки бота
+  enabled: true
+  level: 0
+  aliases:
+    - install
+telegram:
+  command: install
+  description: Первоначальной установки бота
+  enabled: true
+  level: 0
+  aliases:
+    - install
+VK:
+  enabled: true
+  level: 0
+  aliases:
+    - install
+Install:
+  - RWRcon_User:
+      - pref: Root
+        level: 5
+        ban: false
+        vkid: null
+        tgid: 1232323
+        ablc: true
+        absl: true
+  - RWRcon_Level:
+      - name: Console
+        id_name: cons
+      - name: Модератор
+        id_name: mod
+      - name: Администратор
+        id_name: admin
+      - name: Гл.Администратор
+        id_name: gladmin
+      - name: Руководитель
+        id_name: rukovaditel
+Message:
+  VK:
+    no_user:
+      message: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      message: ⚠ Нет доступа ⚠
+    main:
+      message: "*id%vkuser.senderId% (Install Successfully)"
+  TG:
+    no_user:
+      text: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      text: ⚠ Нет доступа ⚠
+    main:
+      text: "[Install Successfully](tg://user?id=%tguser.from.id%)"
+      parse_mode: Markdown
+  DS:
+    no_user:
+      content: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      content: ⚠ Нет доступа ⚠
+    main:
+      content: "[Install Successfully](https://discordapp.com/users/%user.dsid%)"

@@ -1,0 +1,41 @@
+discord:
+  name: reload
+  description: Перезапустит бота.
+  enabled: true
+  level: 4
+  aliases:
+    - reload
+telegram:
+  command: reload
+  description: Перезапустит бота.
+  enabled: true
+  level: 4
+  aliases:
+    - reload
+VK:
+  enabled: true
+  level: 4
+  aliases:
+    - reload
+Message:
+  VK:
+    no_user:
+      message: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      message: ⚠ Нет доступа ⚠
+    reload:
+      message: Процесс отключение системы...
+  TG:
+    no_user:
+      text: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      text: ⚠ Нет доступа ⚠
+    reload:
+      text: Процесс отключение системы...
+  DS:
+    no_user:
+      content: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      content: ⚠ Нет доступа ⚠
+    reload:
+      content: Процесс отключение системы...

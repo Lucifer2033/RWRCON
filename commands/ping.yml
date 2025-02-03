@@ -1,0 +1,81 @@
+discord:
+  name: ping
+  description: пинг сайта.
+  options:
+    - name: ip
+      description: ip сервера
+      type: 3
+      required: true
+  enabled: true
+  level: 0
+  aliases:
+    - ping
+telegram:
+  command: ping
+  description: пинг сайта.
+  enabled: true
+  level: 0
+  aliases:
+    - ping
+VK:
+  enabled: true
+  level: 0
+  aliases:
+    - ping
+#для команды ping (можно сменить запрос на query) (чо без порта а зачем если ты его пишеш в кмд?)
+ping: https://api.rimworlda.ru/status?ip=%ip%
+Message:
+  VK:
+    no_user:
+      message: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      message: ⚠ Нет доступа ⚠
+    no_data:
+      ip:
+        message: "⚠ Ошибка: Вы не ввели айпи. ⚠"
+    server_not_online:
+      message: ⚠ Данный сервер отключен или не существует ⚠
+    result:
+      message:
+        - "🌐 IP-Адрес сервера: %ping.hostIP%\n"
+        - "🌐 Port сервера: %ping.hostPort%\n"
+        - "💫 онлайн: %ping.players.online%/%ping.players.max%\n"
+        - "💻 Версия: %ping.version.name%\n"
+        - "💻 протокол: %ping.version.protocol%\n"
+        - "📖 Motd: %ping.motd.clean%\n"
+  TG:
+    no_user:
+      text: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      text: ⚠ Нет доступа ⚠
+    no_data:
+      ip:
+        text: "⚠ Ошибка: Вы не ввели айпи. ⚠"
+    server_not_online:
+      text: ⚠ Данный сервер отключен или не существует ⚠
+    result:
+      text:
+        - "🌐 IP-Адрес сервера: %ping.hostIP%\n"
+        - "🌐 Port сервера: %ping.hostPort%\n"
+        - "💫 онлайн: %ping.players.online%/%ping.players.max%\n"
+        - "💻 Версия: %ping.version.name%\n"
+        - "💻 протокол: %ping.version.protocol%\n"
+        - "📖 Motd: %ping.motd.clean%\n"
+  DS:
+    no_user:
+      content: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      content: ⚠ Нет доступа ⚠
+    no_data:
+      ip:
+        content: "⚠ Ошибка: Вы не ввели айпи. ⚠"
+    server_not_online:
+      content: ⚠ Данный сервер отключен или не существует ⚠
+    result:
+      content:
+        - "🌐 IP-Адрес сервера: %ping.hostIP%\n"
+        - "🌐 Port сервера: %ping.hostPort%\n"
+        - "💫 онлайн: %ping.players.online%/%ping.players.max%\n"
+        - "💻 Версия: %ping.version.name%\n"
+        - "💻 протокол: %ping.version.protocol%\n"
+        - "📖 Motd: %ping.motd.clean%\n"

@@ -1,0 +1,89 @@
+discord:
+  name: rconmonitor
+  description: выкл/вкл мониторинг сервер
+  options:
+    - name: idname
+      description: айди имя сервера
+      type: 3
+      required: true
+  enabled: true
+  level: 4
+  aliases:
+    - rconmonitor
+telegram:
+  command: rcon monitor
+  description: выкл/вкл мониторинг сервер.
+  enabled: true
+  level: 4
+  aliases:
+    - rcon monitor
+VK:
+  enabled: true
+  level: 4
+  aliases:
+    - rcon monitor
+#==============================#
+# +--------------------------+ #
+# |        placeholders      | #
+# +--------------------------+ #
+# | доступные в этой команде | #
+# +--------------------------+ #
+# | %prefix.id%              | #
+# | %prefix.name%            | #
+# | %prefix.prefix%          | #
+# +--------------------------+ #
+# | %stats.id%               | #
+# | %stats.name%             | #
+# | %stats.player%           | #
+# | %stats.ping%             | #
+# | %stats.status%           | #
+# | %stats.monitors%         | #
+# | %stats.ip%               | #
+# | %stats.port%             | #
+# | %stats.widgets_icon%     | #
+# | %stats.widgets_url%      | #
+# +--------------------------+ #
+#==============================#
+Message:
+  VK:
+    no_user:
+      message: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      message: ⚠ Нет доступа ⚠
+    no_data:
+      idname:
+        message: "⚠ Ошибка: Вы не ввели айди имя сервера. ⚠"
+    notfound_server:
+      message: ⚠ Данный сервер не найден. ⚠
+    off:
+      message: "Вы откл мониторинг к серверу: %prefix.prefix%"
+    on:
+      message: "Вы вкл мониторинг к серверу: %prefix.prefix%"
+  TG:
+    no_user:
+      text: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      text: ⚠ Нет доступа ⚠
+    no_data:
+      idname:
+        text: "⚠ Ошибка: Вы не ввели айди имя сервера. ⚠"
+    notfound_server:
+      text: ⚠ Данный сервер не найден. ⚠
+    off:
+      text: "Вы откл мониторинг к серверу: %prefix.prefix%"
+    on:
+      text: "Вы вкл мониторинг к серверу: %prefix.prefix%"
+  DS:
+    no_user:
+      content: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      content: ⚠ Нет доступа ⚠
+    no_data:
+      idname:
+        content: "⚠ Ошибка: Вы не ввели айди имя сервера. ⚠"
+    notfound_server:
+      content: ⚠ Данный сервер не найден. ⚠
+    off:
+      content: "Вы откл мониторинг к серверу: %prefix.prefix%"
+    on:
+      content: "Вы вкл мониторинг к серверу: %prefix.prefix%"

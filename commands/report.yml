@@ -1,0 +1,98 @@
+discord:
+  name: report
+  description: написать админам об ошибке.
+  options:
+    - name: text
+      description: текст
+      type: 3
+      required: true
+  enabled: true
+  level: 0
+  aliases:
+    - report
+telegram:
+  command: report
+  description: написать админам об ошибке.
+  enabled: true
+  level: 0
+  aliases:
+    - report
+VK:
+  enabled: true
+  level: 0
+  aliases:
+    - report
+#==============================#
+# +--------------------------+ #
+# |       placeholders       | #
+# +--------------------------+ #
+# | доступные в этой команде | #
+# +--------------------------+ #
+# | %report.id%              | #
+# | %report.sender%          | #
+# | %report.messages%        | #
+# +--------------------------+ #
+# | %prefix.id%              | #
+# | %prefix.name%            | #
+# | %prefix.prefix%          | #
+# +--------------------------+ #
+#==============================#
+Message:
+  VK:
+    no_user:
+      message: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      message: ⚠ Нет доступа ⚠
+    no_data:
+      text:
+        message: "⚠ Ошибка: Вы не ввели текст репорта. ⚠"
+    found:
+      message: "%user.pref%, Вы уже отправляли репорт Ваш репорт №%report.id%"
+    report_send:
+      message:
+        - "%report.title%\n"
+        - "🗣️ Отправил: %user.vkid%\n"
+        - "✏️ ID жалобы: %report.id%\n"
+        - "➡️ %user.pref%: %report.messages%"
+      chat_id: "%config.logger.vk.chat.mod%"
+      random_id: 0
+    report_result:
+      message: "%user.pref%, ваше сообщение отправлено. Номер заявки: №%report.id% 👍"
+  TG:
+    no_user:
+      text: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      text: ⚠ Нет доступа ⚠
+    no_data:
+      text:
+        text: "⚠ Ошибка: Вы не ввели текст репорта. ⚠"
+    found:
+      text: "%user.pref%, Вы уже отправляли репорт Ваш репорт №%report.id%"
+    report_send:
+      text:
+        - "%report.title%\n"
+        - "🗣️ Отправил: %user.tgid%\n"
+        - "✏️ ID жалобы: %report.id%\n"
+        - "➡️ %user.pref%: %report.messages%"
+      chat_id: "%config.logger.tg.chat.mod%"
+    report_result:
+      text: "%user.pref%, ваше сообщение отправлено. Номер заявки: №%report.id% 👍"
+  DS:
+    no_user:
+      content: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      content: ⚠ Нет доступа ⚠
+    no_data:
+      text:
+        content: "⚠ Ошибка: Вы не ввели текст репорта. ⚠"
+    found:
+      content: "%user.pref%, Вы уже отправляли репорт Ваш репорт №%report.id%"
+    report_send:
+      content:
+        - "%report.title%\n"
+        - "🗣️ Отправил: %user.dsid%\n"
+        - "✏️ ID жалобы: %report.id%\n"
+        - "➡️ %user.pref%: %report.messages%"
+      channel_id: "%config.logger.ds.chat.mod%"
+    report_result:
+      content: "%user.pref%, ваше сообщение отправлено. Номер заявки: №%report.id% 👍"

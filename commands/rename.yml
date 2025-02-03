@@ -1,0 +1,108 @@
+discord:
+  name: rcon
+  description: Настройка ркона.
+  options:
+    - name: rename
+      description: сменить название айди имя сервера и по желанию префикс.
+      type: 1
+      options:
+        - name: idname
+          description: айди имя сервера
+          type: 3
+          required: true
+        - name: nidname
+          description: новый айди имя или none
+          type: 3
+          required: true
+        - name: prefix
+          description: префикс сервера
+          type: 3
+          required: false
+  enabled: true
+  level: 4
+  aliases:
+    - rcon rename
+telegram:
+  command: rcon rename
+  description: сменить название айди имя сервера и по желанию префикс.
+  enabled: true
+  level: 4
+  aliases:
+    - rcon rename
+VK:
+  enabled: true
+  level: 4
+  aliases:
+    - rcon rename
+#==============================#
+# +--------------------------+ #
+# |       placeholders       | #
+# +--------------------------+ #
+# | доступные в этой команде | #
+# +--------------------------+ #
+# | %prefix.id%              | #
+# | %prefix.name%            | #
+# | %prefix.prefix%          | #
+# +--------------------------+ #
+# | %stats.id%               | #
+# | %stats.name%             | #
+# | %stats.player%           | #
+# | %stats.ping%             | #
+# | %stats.status%           | #
+# | %stats.monitors%         | #
+# | %stats.ip%               | #
+# | %stats.port%             | #
+# | %stats.widgets_icon%     | #
+# | %stats.widgets_url%      | #
+# +--------------------------+ #
+# | %rcon.id%                | #
+# | %rcon.name%              | #
+# | %rcon.ip%                | #
+# | %rcon.rcon_port%         | #
+# | %rcon.rcon_password%     | #
+# | %rcon.mode%              | #
+# +--------------------------+ #
+#==============================#
+Message:
+  VK:
+    no_user:
+      message: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      message: ⚠ Нет доступа ⚠
+    no_data:
+      sname:
+        message: "⚠ Ошибка: Вы не ввели старое имя. ⚠"
+      nname:
+        message: "⚠ Ошибка: Вы не ввели новое имя. ⚠"
+    not_found_server:
+      message: "⚠ Ошибка: данный сервер не найден ⚠"
+    main:
+      message: Вы успешно сменили название сервера
+  TG:
+    no_user:
+      text: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      text: ⚠ Нет доступа ⚠
+    no_data:
+      sname:
+        text: "⚠ Ошибка: Вы не ввели старое имя. ⚠"
+      nname:
+        text: "⚠ Ошибка: Вы не ввели новое имя. ⚠"
+    not_found_server:
+      text: "⚠ Ошибка: данный сервер не найден ⚠"
+    main:
+      text: Вы успешно сменили название сервера
+  DS:
+    no_user:
+      content: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      content: ⚠ Нет доступа ⚠
+    no_data:
+      sname:
+        content: "⚠ Ошибка: Вы не ввели старое имя. ⚠"
+      nname:
+        content: "⚠ Ошибка: Вы не ввели новое имя. ⚠"
+    not_found_server:
+      content: "⚠ Ошибка: данный сервер не найден ⚠"
+    main:
+      content: Вы успешно сменили название сервера

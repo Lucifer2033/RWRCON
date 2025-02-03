@@ -1,0 +1,69 @@
+discord:
+  name: профиль
+  description: Ваш профиль.
+  enabled: true
+  level: 0
+  aliases:
+    - профиль
+telegram:
+  command: профиль
+  description: Ваш профиль.
+  enabled: true
+  level: 0
+  aliases:
+    - профиль
+VK:
+  enabled: true
+  level: 0
+  aliases:
+    - профиль
+Message:
+  VK:
+    no_user:
+      message: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      message: ⚠ Нет доступа ⚠
+    access_server: ☆ %prefix.prefix%  ➟ Активен
+    no_access_server: ☆ %prefix.prefix% ➟ Не Активен
+    main:
+      message:
+        - "Информация:\n"
+        - "★ Ваш ник: %user.pref%\n"
+        - "★ ID Вконтакте: %user.vkid%\n"
+        - "★ Уровень доступа: %userlevel.name%\n"
+        - "★ Доступные сервера:\n"
+        - "%profil.servers%"
+        #keyboard: {"one_time": false, "buttons": [[{ "action": { "type": "text", "payload": "{}", "label": "Профиль" }, "color": "primary" }]],"inline": true}
+        #если отправить с командой фото то он выводить профиль и фото которое ты отправил
+        #до 3 или 10(тут хз) фотографиий можно в репорт и ответ на репорт что довольно поможет вам хз:)
+        #attachment: '%vkuser.attachment%'
+  TG:
+    no_user:
+      text: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      text: ⚠ Нет доступа ⚠
+    access_server: ☆ %prefix.prefix%  ➟ Активен
+    no_access_server: ☆ %prefix.prefix% ➟ Не Активен
+    main:
+      text:
+        - "Информация:\n"
+        - "★ Ваш ник: %user.pref%\n"
+        - "★ ID Вконтакте: %user.vkid%\n"
+        - "★ Уровень доступа: %userlevel.name%\n"
+        - "★ Доступные сервера:\n"
+        - "%profil.servers%"
+  DS:
+    no_user:
+      content: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      content: ⚠ Нет доступа ⚠
+    access_server: ☆ %prefix.prefix%  ➟ Активен
+    no_access_server: ☆ %prefix.prefix% ➟ Не Активен
+    main:
+      content:
+        - "Информация:\n"
+        - "★ Ваш ник: %user.pref%\n"
+        - "★ ID Вконтакте: %user.dsid%\n"
+        - "★ Уровень доступа: %userlevel.name%\n"
+        - "★ Доступные сервера:\n"
+        - "%profil.servers%\n"

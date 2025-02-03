@@ -1,0 +1,64 @@
+discord:
+  name: rcon
+  description: Настройка ркона.
+  options:
+    - name: status
+      description: Показать работающие севера.
+      type: 1
+  enabled: true
+  level: 1
+  aliases:
+    - rcon status
+telegram:
+  command: rcon status
+  description: Показать работающие севера.
+  enabled: true
+  level: 1
+  aliases:
+    - rcon status
+VK:
+  enabled: true
+  level: 1
+  aliases:
+    - rcon status
+#==============================#
+# +--------------------------+ #
+# |       placeholders       | #
+# +--------------------------+ #
+# | доступные в этой команде | #
+# +--------------------------+ #
+# | %prefix.id%              | #
+# | %prefix.name%            | #
+# | %prefix.prefix%          | #
+# +--------------------------+ #
+# | %rconstatus.list%        | #
+# +--------------------------+ #
+#==============================#
+Message:
+  VK:
+    no_user:
+      message: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      message: ⚠ Нет доступа ⚠
+    on_serv: ☆ %prefix.prefix% ➟ Работает
+    off_serv: ☆ %prefix.prefix% ➟ Отключен
+    main:
+      message: Сервера "%rconstatus.list%"
+  TG:
+    no_user:
+      text: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      text: ⚠ Нет доступа ⚠
+    on_serv: ☆ %prefix.prefix% ➟ Работает
+    off_serv: ☆ %prefix.prefix% ➟ Отключен
+    main:
+      text: Сервера "%rconstatus.list%"
+  DS:
+    no_user:
+      content: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      content: ⚠ Нет доступа ⚠
+    on_serv: ☆ %prefix.prefix% ➟ Работает
+    off_serv: ☆ %prefix.prefix% ➟ Отключен
+    main:
+      content: Сервера "%rconstatus.list%"

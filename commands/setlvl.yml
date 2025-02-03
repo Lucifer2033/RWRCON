@@ -1,0 +1,108 @@
+discord:
+  name: rcon
+  description: Настройка ркона.
+  options:
+    - name: setlvl
+      description: Установить уровень для пользователя.
+      type: 1
+      options:
+        - name: user
+          description: пользователь
+          type: 6
+          required: true
+        - name: level
+          description: айди или айди название
+          type: 3
+          required: true
+  enabled: true
+  level: 4
+  aliases:
+    - rcon setlvl
+telegram:
+  command: rcon setlvl
+  description: Установить уровень для пользователя.
+  enabled: true
+  level: 4
+  aliases:
+    - rcon setlvl
+VK:
+  enabled: true
+  level: 4
+  aliases:
+    - rcon setlvl
+#==============================#
+# +--------------------------+ #
+# |       placeholders       | #
+# +--------------------------+ #
+# | доступные в этой команде | #
+# +--------------------------+ #
+# | %targetuser.id%          | #
+# | %targetuser.pref%        | #
+# | %targetuser.level%       | #
+# | %targetuser.ban%         | #
+# | %targetuser.vkid%        | #
+# | %targetuser.tgid%        | #
+# | %targetuser.ablc%        | #
+# | %targetuser.absl%        | #
+# +--------------------------+ #
+# | %targetlevel.id%         | #
+# | %targetlevel.name%       | #
+# | %targetlevel.id_name%    | #
+# +--------------------------+ #
+#==============================#
+Message:
+  VK:
+    no_user:
+      message: '⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!'
+    no_permissions:
+      message: ⚠ Нет доступа ⚠
+    no_data:
+      id:
+        message: "⚠ Ошибка: Вы не ввели айди/ссылку/умпоминие. ⚠"
+      lvl:
+        message: "⚠ Ошибка: Вы не ввели айди имя или айди уровня. ⚠"
+    no_user_vk:
+      message: ⚠ Данный вк юзер не найден
+    nofoundlvl:
+      message: ⚠ Данный уровнь не найден. ⚠
+    yourselfsetlvl:
+      message: Нельзя себе установить лвл
+    main:
+      message: Вы успешно сменили уровень *id%targetuser.id% (%targetuser.pref%) на %targetlevel.name%
+  TG:
+    no_user:
+      text: '⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!'
+    no_permissions:
+      text: ⚠ Нет доступа ⚠
+    no_data:
+      id:
+        text: "⚠ Ошибка: Вы не ввели айди/ссылку/умпоминие. ⚠"
+      lvl:
+        text: "⚠ Ошибка: Вы не ввели айди имя или айди уровня. ⚠"
+    no_user_tg:
+      text: ⚠ Данный тг юзер не найден
+    nofoundlvl:
+      text: ⚠ Данный уровнь не найден. ⚠
+    yourselfsetlvl:
+      text: Нельзя себе установить лвл
+    main:
+      text: Вы успешно сменили уровень [%targetuser.pref%](tg://user?id=%targetuser.tgid%) на %targetlevel.name%
+      parse_mode: Markdown
+  DS:
+    no_user:
+      content: '⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!'
+    no_permissions:
+      content: ⚠ Нет доступа ⚠
+    no_data:
+      id:
+        content: "⚠ Ошибка: Вы не ввели айди/ссылку/умпоминие. ⚠"
+      lvl:
+        content: "⚠ Ошибка: Вы не ввели айди имя или айди уровня. ⚠"
+    no_user_ds:
+      content: ⚠ Данный дс юзер не найден
+    nofoundlvl:
+      content: ⚠ Данный уровнь не найден. ⚠
+    yourselfsetlvl:
+      content: Нельзя себе установить лвл
+    main:
+      content: Вы успешно сменили уровень *id%targetuser.id% (%targetuser.pref%) на %targetlevel.name%

@@ -1,0 +1,103 @@
+discord:
+  name: geoip
+  description: узнать локацию айпи.
+  options:
+    - name: ip
+      description: айпи адрес
+      type: 3
+      required: true
+  enabled: true
+  level: 0
+  aliases:
+    - geoip
+telegram:
+  command: geoip
+  description: узнать локацию айпи.
+  enabled: true
+  level: 0
+  aliases:
+    - geoip
+VK:
+  enabled: true
+  level: 0
+  aliases:
+    - geoip
+#==============================#
+# +--------------------------+ #
+# |        placeholders      | #
+# +--------------------------+ #
+# | доступные в этой команде | #
+# +--------------------------+ #
+# | %geoip.country_code%     | #
+# | %geoip.country_name%     | #
+# | %geoip.region_code%      | #
+# | %geoip.region_name%      | #
+# | %geoip.city%             | #
+# | %geoip.isp%              | #
+# | %geoip.zip_code%         | #
+# | %geoip.time_zone%        | #
+# | %geoip.latitude%         | #
+# | %geoip.longitude%        | #
+# +--------------------------+ #
+#==============================#
+Message:
+  VK:
+    no_user:
+      message: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      message: ⚠ Нет доступа ⚠
+    no_data:
+      ip:
+        message: "⚠ Ошибка: Вы не ввели айпи. ⚠"
+    result:
+      message:
+        - "country_code: %geoip.country_code%\n"
+        - "country_name: %geoip.country_name%\n"
+        - "region_code: %geoip.region_code%\n"
+        - "region_name: %geoip.region_name%\n"
+        - "city: %geoip.city%\n"
+        - "isp: %geoip.isp%\n"
+        - "zip_code: %geoip.zip_code%\n"
+        - "time_zone: %geoip.time_zone%\n"
+        - "latitude: %geoip.latitude%\n"
+        - "longitude: %geoip.longitude%\n"
+  TG:
+    no_user:
+      text: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      text: ⚠ Нет доступа ⚠
+    no_data:
+      ip:
+        text: "⚠ Ошибка: Вы не ввели айпи. ⚠"
+    result:
+      text:
+        - "country_code: %geoip.country_code%\n"
+        - "country_name: %geoip.country_name%\n"
+        - "region_code: %geoip.region_code%\n"
+        - "region_name: %geoip.region_name%\n"
+        - "city: %geoip.city%\n"
+        - "isp: %geoip.isp%\n"
+        - "zip_code: %geoip.zip_code%\n"
+        - "time_zone: %geoip.time_zone%\n"
+        - "latitude: %geoip.latitude%\n"
+        - "longitude: %geoip.longitude%\n"
+  DS:
+    no_user:
+      content: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      content: ⚠ Нет доступа ⚠
+    no_data:
+      ip:
+        content: "⚠ Ошибка: Вы не ввели айпи. ⚠"
+    result:
+      content:
+        - "country_code: %geoip.country_code%\n"
+        - "country_name: %geoip.country_name%\n"
+        - "region_code: %geoip.region_code%\n"
+        - "region_name: %geoip.region_name%\n"
+        - "city: %geoip.city%\n"
+        - "isp: %geoip.isp%\n"
+        - "zip_code: %geoip.zip_code%\n"
+        - "time_zone: %geoip.time_zone%\n"
+        - "latitude: %geoip.latitude%\n"
+        - "longitude: %geoip.longitude%\n"

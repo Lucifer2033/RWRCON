@@ -1,0 +1,93 @@
+discord:
+  name: rcon
+  description: Настройка ркона.
+  options:
+    - name: blallow
+      description: откл/вкл обход черного списка пользователю.
+      type: 1
+      options:
+        - name: user
+          description: пользователь которому надо выдать/забрать обход черного списка
+          type: 6
+          required: true
+  enabled: true
+  level: 5
+  aliases:
+    - rcon blallow
+telegram:
+  command: rcon blallow
+  description: откл/вкл обход черного списка пользователю
+  enabled: true
+  level: 5
+  aliases:
+    - rcon blallow
+VK:
+  enabled: true
+  level: 5
+  aliases:
+    - rcon blallow
+#==============================#
+# +--------------------------+ #
+# |        placeholders      | #
+# +--------------------------+ #
+# | доступные в этой команде | #
+# +--------------------------+ #
+# | %targetuser.id%          | #
+# | %targetuser.pref%        | #
+# | %targetuser.level%       | #
+# | %targetuser.ban%         | #
+# | %targetuser.vkid%        | #
+# | %targetuser.tgid%        | #
+# | %targetuser.ablc%        | #
+# | %targetuser.absl%        | #
+# +--------------------------+ #
+# | %targetlevel.id%         | #
+# | %targetlevel.name%       | #
+# | %targetlevel.id_name%    | #
+# +--------------------------+ #
+#==============================#
+Message:
+  VK:
+    no_user:
+      message: '⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!'
+    no_permissions:
+      message: ⚠ Нет доступа ⚠
+    no_data:
+      id:
+        message: "⚠ Ошибка: Вы не ввели айди/ссылку/умпоминие. ⚠"
+    no_user_vk:
+      message: ⚠ Данный вк юзер не найден
+    on:
+      message: Вы успешно включили обход черного списка для *id%targetuser.vkid% (%targetuser.pref%)
+    off:
+      message: Вы успешно отключили обход черного списка для *id%targetuser.vkid% (%targetuser.pref%)
+  TG:
+    no_user:
+      text: '⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!'
+    no_permissions:
+      text: ⚠ Нет доступа ⚠
+    no_data:
+      id:
+        text: "⚠ Ошибка: Вы не ввели айди/ссылку/умпоминие. ⚠"
+    no_user_tg:
+      text: ⚠ Данный тг юзер не найден
+    on:
+      text: Вы успешно включили обход черного списка для [%targetuser.pref%](tg://user?id=%targetuser.tgid%)
+      parse_mode: Markdown
+    off:
+      text: Вы успешно отключили обход черного списка для [%targetuser.pref%](tg://user?id=%targetuser.tgid%)
+      parse_mode: Markdown
+  DS:
+    no_user:
+      content: '⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!'
+    no_permissions:
+      content: ⚠ Нет доступа ⚠
+    no_data:
+      id:
+        content: "⚠ Ошибка: Вы не ввели айди/ссылку/умпоминие. ⚠"
+    no_user_ds:
+      content: ⚠ Данный дс юзер не найден
+    on:
+      content: Вы успешно включили обход черного списка для [%targetuser.pref%](https://discordapp.com/users/%targetuser.dsid%)
+    off:
+      content: Вы успешно отключили обход черного списка для [%targetuser.pref%](https://discordapp.com/users/%targetuser.dsid%)

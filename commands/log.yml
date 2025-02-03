@@ -1,0 +1,145 @@
+discord:
+  name: rcon
+  description: Настройка ркона.
+  options:
+    - name: log
+      description: вкл/откл логов.
+      type: 1
+      options:
+        - name: type
+          description: тип логов
+          type: 3
+          required: true
+          choices:
+            - name: Файл
+              value: file
+            - name: ВК
+              value: vk
+            - name: ТГ
+              value: tg
+            - name: ДС
+              value: ds
+            - name: Консоль
+              value: console
+  enabled: true
+  level: 5
+  aliases:
+    - rcon log
+telegram:
+  command: rcon log
+  description: вкл/откл логов.
+  enabled: true
+  level: 5
+  aliases:
+    - rcon log
+VK:
+  enabled: true
+  level: 5
+  aliases:
+    - rcon log
+Message:
+  VK:
+    no_user:
+      message: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      message: ⚠ Нет доступа ⚠
+    no_data:
+      type:
+        message: "⚠ Ошибка: Вы не ввели тип лога. ⚠"
+    type_nofound:
+      message: Данный режим не найден
+    vk:
+      on:
+        message: Логи ВКонтакте включенны.
+      off:
+        message: Логи ВКонтакте отключенны.
+    tg:
+      on:
+        message: Логи Телеграмма включенны.
+      off:
+        message: Логи Телеграмма отключенны.
+    ds:
+      on:
+        message: Логи Дискорда включенны.
+      off:
+        message: Логи Дискорда отключенны.
+    console:
+      on:
+        message: Логи консоли включенны.
+      off:
+        message: Логи консоли отключенны.
+    file:
+      on:
+        message: Логи в файлах включенны.
+      off:
+        message: Логи в файлах отключенны.
+  TG:
+    no_user:
+      text: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      text: ⚠ Нет доступа ⚠
+    no_data:
+      type:
+        text: "⚠ Ошибка: Вы не ввели тип лога. ⚠"
+    type_nofound:
+      text: Данный режим не найден
+    vk:
+      on:
+        text: Логи ВКонтакте включенны.
+      off:
+        text: Логи ВКонтакте отключенны.
+    tg:
+      on:
+        text: Логи Телеграмма включенны.
+      off:
+        text: Логи Телеграмма отключенны.
+    ds:
+      on:
+        text: Логи Дискорда включенны.
+      off:
+        text: Логи Дискорда отключенны.
+    console:
+      on:
+        text: Логи консоли включенны.
+      off:
+        text: Логи консоли отключенны.
+    file:
+      on:
+        text: Логи в файлах включенны.
+      off:
+        text: Логи в файлах отключенны.
+  DS:
+    no_user:
+      content: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      content: ⚠ Нет доступа ⚠
+    no_data:
+      type:
+        content: "⚠ Ошибка: Вы не ввели тип лога. ⚠"
+    type_nofound:
+      content: Данный режим не найден
+    vk:
+      on:
+        content: Логи ВКонтакте включенны.
+      off:
+        content: Логи ВКонтакте отключенны.
+    tg:
+      on:
+        content: Логи Телеграмма включенны.
+      off:
+        content: Логи Телеграмма отключенны.
+    ds:
+      on:
+        content: Логи Дискорда включенны.
+      off:
+        content: Логи Дискорда отключенны.
+    console:
+      on:
+        content: Логи консоли включенны.
+      off:
+        content: Логи консоли отключенны.
+    file:
+      on:
+        content: Логи в файлах включенны.
+      off:
+        content: Логи в файлах отключенны.

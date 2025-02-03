@@ -1,0 +1,113 @@
+discord:
+  name: ungive
+  description: забрать доступ к серверу.
+  options:
+    - name: idname
+      description: айди имя сервера
+      type: 3
+      required: true
+    - name: user
+      description: пользователь
+      type: 6
+      required: true
+  enabled: true
+  level: 3
+  aliases:
+    - ungive
+telegram:
+  command: ungive
+  description: забрать доступ к серверу.
+  enabled: true
+  level: 3
+  aliases:
+    - ungive
+VK:
+  enabled: true
+  level: 3
+  aliases:
+    - ungive
+#==============================#
+# +--------------------------+ #
+# |        placeholders      | #
+# +--------------------------+ #
+# | доступные в этой команде | #
+# +--------------------------+ #
+# | %targetuser.id%          | #
+# | %targetuser.pref%        | #
+# | %targetuser.level%       | #
+# | %targetuser.ban%         | #
+# | %targetuser.vkid%        | #
+# | %targetuser.tgid%        | #
+# | %targetuser.ablc%        | #
+# | %targetuser.absl%        | #
+# +--------------------------+ #
+# | %targetlevel.id%         | #
+# | %targetlevel.name%       | #
+# | %targetlevel.id_name%    | #
+# +--------------------------+ #
+# | %prefix.id%              | #
+# | %prefix.name%            | #
+# | %prefix.prefix%          | #
+# +--------------------------+ #
+#==============================#
+Message:
+  VK:
+    no_user:
+      message: '⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!'
+    no_permissions:
+      message: ⚠ Нет доступа ⚠
+    no_data:
+      server:
+        message: "⚠ Ошибка: Вы не ввели айди имя сервера. ⚠"
+      id:
+        message: "⚠ Ошибка: Вы не ввели айди/ссылку/умпоминие. ⚠"
+    not_found_server:
+      message: ⚠ Данный сервер не найден. ⚠
+    no_user_vk:
+      message: ⚠ Данный вк юзер не найден
+    no_access:
+      message: ⚠ Данный пользователь не имеет доступ к этому серверу.
+    remove:
+      message: Вы забрали доступ к серверу %prefix.prefix%
+    yourself:
+      message: ⚠ Нельзя у себя забрать сервер. ⚠
+  TG:
+    no_user:
+      text: '⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!'
+    no_permissions:
+      text: ⚠ Нет доступа ⚠
+    no_data:
+      server:
+        text: "⚠ Ошибка: Вы не ввели айди имя сервера. ⚠"
+      id:
+        text: "⚠ Ошибка: Вы не ввели айди/ссылку/умпоминие. ⚠"
+    not_found_server:
+      text: ⚠ Данный сервер не найден. ⚠
+    no_user_tg:
+      text: ⚠ Данный тг юзер не найден
+    no_access:
+      text: ⚠ Данный пользователь не имеет доступ к этому серверу.
+    remove:
+      text: Вы забрали доступ к серверу %prefix.prefix%
+    yourself:
+      text: ⚠ Нельзя у себя забрать сервер. ⚠
+  DS:
+    no_user:
+      content: '⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!'
+    no_permissions:
+      content: ⚠ Нет доступа ⚠
+    no_data:
+      server:
+        content: "⚠ Ошибка: Вы не ввели айди имя сервера. ⚠"
+      id:
+        content: "⚠ Ошибка: Вы не ввели айди/ссылку/умпоминие. ⚠"
+    not_found_server:
+      content: ⚠ Данный сервер не найден. ⚠
+    no_user_ds:
+      content: ⚠ Данный дс юзер не найден
+    no_access:
+      content: ⚠ Данный пользователь не имеет доступ к этому серверу.
+    remove:
+      content: Вы забрали доступ к серверу %prefix.prefix%
+    yourself:
+      content: ⚠ Нельзя у себя забрать сервер. ⚠

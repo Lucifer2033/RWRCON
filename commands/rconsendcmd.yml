@@ -1,0 +1,257 @@
+discord:
+  name: send_
+  description: Отправки команды на сервер
+  options:
+    - name: idname
+      description: айди имя сервера
+      type: 3
+      required: true
+    - name: command
+      description: команда
+      type: 3
+      required: true
+  enabled: true
+  level: 0
+  aliases:
+    - send_
+telegram:
+  command: \/
+  description: Отправки команды на сервер
+  enabled: true
+  level: 0
+  aliases:
+    - \/
+VK:
+  enabled: true
+  level: 0
+  aliases:
+    - \/
+send_rcon_min: 1
+send_rcon_max: 4
+#==============================#
+# +--------------------------+ #
+# |        placeholders      | #
+# +--------------------------+ #
+# | доступные в этой команде | #
+# +--------------------------+ #
+# | %blocklist.id%           | #
+# | %blocklist.cmd%          | #
+# | %blocklist.server%       | #
+# +--------------------------+ #
+# | %blacklist.id%           | #
+# | %blacklist.cmd%          | #
+# | %blacklist.server%       | #
+# +--------------------------+ #
+# | %whitelist.id%           | #
+# | %whitelist.cmd%          | #
+# | %whitelist.server%       | #
+# +--------------------------+ #
+# | %stats.id%               | #
+# | %stats.name%             | #
+# | %stats.player%           | #
+# | %stats.ping%             | #
+# | %stats.status%           | #
+# | %stats.monitors%         | #
+# | %stats.ip%               | #
+# | %stats.port%             | #
+# | %stats.widgets_icon%     | #
+# | %stats.widgets_url%      | #
+# +--------------------------+ #
+# | %prefix.id%              | #
+# | %prefix.name%            | #
+# | %prefix.prefix%          | #
+# +--------------------------+ #
+# | %rconresult.response%    | #
+# | %rconresult.error%       | #
+# +--------------------------+ #
+#==============================#
+Message:
+  VK:
+    no_user:
+      message: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      message: ⚠ Нет доступа ⚠
+    no_data:
+      server:
+        message: "⚠ Ошибка: Вы не ввели айди имя сервера. ⚠"
+      cmd:
+        message: "⚠ Ошибка: Вы не ввели команду. ⚠"
+    not_found_server:
+      message: ⚠ Данный сервер не найден. ⚠
+    cmd_blacklist:
+      message: ⚠ Данная команда в черном списке сервера.
+    symbol_blocklist:
+      message: ⚠ Данный символ в команде запрещен для этого сервера.
+    cmd_blocklist:
+      message: ⚠ Данная команда запрещенная доступ от лвл Гл.Администратор.
+    connect_server:
+      message: ⏰ Подключение к серверу...
+    not_allow_cmd:
+      message: ⚠ Команда не доступна.
+    not_access_server:
+      message: ⚠ У вас нету доступа к серверу %prefix.prefix% ⚠
+    off_server_rcon:
+      message: ⚠ Данный сервер временно не доступен. ⚠
+    empty_reason:
+      message: Команда выполнена успешно!
+    logger:
+      vk:
+        result:
+          message:
+            - "%prefix.prefix%\n"
+            - "Пользователь VK: @id%vkuser.senderId%(%user.pref%)\n"
+            - "VK ID: %vkuser.senderId%\n"
+            - "LvL: %userlevel.name%\n"
+            - "использовал команду %args[2]%\n"
+            - "через бота!"
+          chat_id: "%config.logger.vk.chat.log%"
+          random_id: 0
+        error:
+          message: "%prefix.prefix% Ошибка при подключении к серверу %rconresult.error%"
+          chat_id: "%config.logger.vk.chat.system%"
+          random_id: 0
+      file:
+        result:
+          - "%prefix.prefix%\n"
+          - "Пользователь VK: %vkuser.senderId%\n"
+          - "LvL: %userlevel.name%\n"
+          - "использовал команду %args[2]%\n"
+          - "через бота!"
+        error: "⚠ Ошибка сервера %prefix.prefix%: %rconresult.error%"
+      console:
+        result:
+          - "%prefix.prefix%\n"
+          - "Пользователь VK: %vkuser.senderId%\n"
+          - "LvL: %userlevel.name%\n"
+          - "использовал команду %args[2]%\n"
+          - "через бота!"
+        error: "Ошибка сервера %prefix.prefix%: %rconresult.error%"
+    server_reason:
+      message: "💡 Ответ от сервера:\n%rconresult.response%"
+    fakeerror:
+      message: ⚠ Ошибка ⚠
+  TG:
+    no_user:
+      text: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      text: ⚠ Нет доступа ⚠
+    no_data:
+      server:
+        text: "⚠ Ошибка: Вы не ввели айди имя сервера. ⚠"
+      cmd:
+        text: "⚠ Ошибка: Вы не ввели команду. ⚠"
+    not_found_server:
+      text: ⚠ Данный сервер не найден. ⚠
+    cmd_blacklist:
+      text: ⚠ Данная команда в черном списке сервера.
+    symbol_blocklist:
+      text: ⚠ Данный символ в команде запрещен для этого сервера.
+    cmd_blocklist:
+      text: ⚠ Данная команда запрещенная доступ от лвл Гл.Администратор.
+    connect_server:
+      text: ⏰ Подключение к серверу...
+    not_allow_cmd:
+      text: ⚠ Команда не доступна.
+    not_access_server:
+      text: ⚠ У вас нету доступа к серверу %prefix.prefix% ⚠
+    off_server_rcon:
+      text: ⚠ Данный сервер временно не доступен. ⚠
+    empty_reason:
+      text: Команда выполнена успешно!
+    logger:
+      tg:
+        result:
+          text:
+            - "%prefix.prefix%\n"
+            - "Пользователь TG: [%user.pref%](tg://user?id=%user.tgid%)\n"
+            - "TG ID: %tguser.from.id%\n"
+            - "LvL: %userlevel.name%\n"
+            - "использовал команду %args[2]%\n"
+            - "через бота!"
+          chat_id: "%config.logger.tg.chat.log%"
+          parse_mode: Markdown
+        error:
+          text: "%prefix.prefix% Ошибка при подключении к серверу %rconresult.error%"
+          chat_id: "%config.logger.tg.chat.system%"
+      file:
+        result:
+          - "%prefix.prefix%\n"
+          - "Пользователь TG: %tguser.from.id%\n"
+          - "LvL: %userlevel.name%\n"
+          - "использовал команду %args[2]%\n"
+          - "через бота!"
+        error: "⚠ Ошибка сервера %prefix.prefix%: %rconresult.error%"
+      console:
+        result:
+          - "%prefix.prefix%\n"
+          - "Пользователь TG: %tguser.from.id%\n"
+          - "LvL: %userlevel.name%\n"
+          - "использовал команду %args[2]%\n"
+          - "через бота!"
+        error: "Ошибка сервера %prefix.prefix%: %rconresult.error%"
+    server_reason:
+      text: "💡 Ответ от сервера: \n%rconresult.response%"
+    fakeerror:
+      text: ⚠ Ошибка ⚠
+  DS:
+    no_user:
+      content: ⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!
+    no_permissions:
+      content: ⚠ Нет доступа ⚠
+    no_data:
+      server:
+        content: "⚠ Ошибка: Вы не ввели айди имя сервера. ⚠"
+      cmd:
+        content: "⚠ Ошибка: Вы не ввели команду. ⚠"
+    not_found_server:
+      content: ⚠ Данный сервер не найден. ⚠
+    cmd_blacklist:
+      content: ⚠ Данная команда в черном списке сервера.
+    symbol_blocklist:
+      content: ⚠ Данный символ в команде запрещен для этого сервера.
+    cmd_blocklist:
+      content: ⚠ Данная команда запрещенная доступ от лвл Гл.Администратор.
+    connect_server:
+      content: ⏰ Подключение к серверу...
+    not_allow_cmd:
+      content: ⚠ Команда не доступна.
+    not_access_server:
+      content: ⚠ У вас нету доступа к серверу %prefix.prefix% ⚠
+    off_server_rcon:
+      content: ⚠ Данный сервер временно не доступен. ⚠
+    empty_reason:
+      content: Команда выполнена успешно!
+    logger:
+      ds:
+        result:
+          content:
+            - "%prefix.prefix%\n"
+            - "Пользователь VK: @id%vkuser.senderId%(%user.pref%)\n"
+            - "VK ID: %vkuser.senderId%\n"
+            - "LvL: %userlevel.name%\n"
+            - "использовал команду %args[2]%\n"
+            - "через бота!"
+          channel_id: "%config.logger.ds.chat.log%"
+        error:
+          content: "%prefix.prefix% Ошибка при подключении к серверу %rconresult.error%"
+          chat_id: "%config.logger.ds.chat.system%"
+      file:
+        result:
+          - "%prefix.prefix%\n"
+          - "Пользователь VK: %vkuser.senderId%\n"
+          - "LvL: %userlevel.name%\n"
+          - "использовал команду %args[2]%\n"
+          - "через бота!"
+        error: "⚠ Ошибка сервера %prefix.prefix%: %rconresult.error%"
+      console:
+        result:
+          - "%prefix.prefix%\n"
+          - "Пользователь VK: %vkuser.senderId%\n"
+          - "LvL: %userlevel.name%\n"
+          - "использовал команду %args[2]%\n"
+          - "через бота!"
+        error: "Ошибка сервера %prefix.prefix%: %rconresult.error%"
+    server_reason:
+      content: "💡 Ответ от сервера:\n%rconresult.response%"
+    fakeerror:
+      content: ⚠ Ошибка ⚠

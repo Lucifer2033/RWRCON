@@ -1,0 +1,95 @@
+discord:
+  name: rcon
+  description: Настройка ркона.
+  options:
+    - name: renick
+      description: Изменить ник для пользователя.
+      type: 1
+      options:
+        - name: user
+          description: пользователь
+          type: 6
+          required: true
+        - name: nickname
+          description: новый никнейм
+          type: 3
+          required: true
+  enabled: true
+  level: 3
+  aliases:
+    - rcon renick
+telegram:
+  command: rcon renick
+  description: Изменить ник для пользователя.
+  enabled: true
+  level: 3
+  aliases:
+    - rcon renick
+VK:
+  enabled: true
+  level: 3
+  aliases:
+    - rcon renick
+#==============================#
+# +--------------------------+ #
+# |        placeholders      | #
+# +--------------------------+ #
+# | доступные в этой команде | #
+# +--------------------------+ #
+# | %targetuser.id%          | #
+# | %targetuser.pref%        | #
+# | %targetuser.level%       | #
+# | %targetuser.ban%         | #
+# | %targetuser.vkid%        | #
+# | %targetuser.tgid%        | #
+# | %targetuser.ablc%        | #
+# | %targetuser.absl%        | #
+# +--------------------------+ #
+# | %targetlevel.id%         | #
+# | %targetlevel.name%       | #
+# | %targetlevel.id_name%    | #
+# +--------------------------+ #
+#==============================#
+Message:
+  VK:
+    no_user:
+      message: '⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!'
+    no_permissions:
+      message: ⚠ Нет доступа ⚠
+    no_data:
+      id:
+        message: "⚠ Ошибка: Вы не ввели айди/ссылку/умпоминие. ⚠"
+      nick:
+        message: "⚠ Ошибка: Вы не ввели новой ник. ⚠"
+    no_user_vk:
+      message: ⚠ Данный вк юзер не найден
+    main:
+      message: Вы успешно сменили ник
+  TG:
+    no_user:
+      text: '⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!'
+    no_permissions:
+      text: ⚠ Нет доступа ⚠
+    no_data:
+      id:
+        text: "⚠ Ошибка: Вы не ввели айди/ссылку/умпоминие. ⚠"
+      nick:
+        text: "⚠ Ошибка: Вы не ввели новой ник. ⚠"
+    no_user_tg:
+      text: ⚠ Данный тг юзер не найден
+    main:
+      text: Вы успешно сменили ник
+  DS:
+    no_user:
+      content: '⚠ У Вас недостаточно прав для использования бота! Приобретите статус [CONSOLE] и Вы сможете использовать команды!'
+    no_permissions:
+      content: ⚠ Нет доступа ⚠
+    no_data:
+      id:
+        content: "⚠ Ошибка: Вы не ввели айди/ссылку/умпоминие. ⚠"
+      nick:
+        content: "⚠ Ошибка: Вы не ввели новой ник. ⚠"
+    no_user_ds:
+      content: ⚠ Данный дс юзер не найден
+    main:
+      content: Вы успешно сменили ник
